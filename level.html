@@ -80,7 +80,7 @@
 						const gameContainer = document.getElementById('game-container');
 						if (gameContainer) {
 							// Формируем URL изображения (используем тот же путь, что в settings.js)
-							const imageUrl = `/word-learning-game/assets/bg-img/${data.bgImage}`;
+							const imageUrl = `/assets/bg-img/${data.bgImage}`;
 
 							
 							// Устанавливаем фоновое изображение
@@ -95,7 +95,7 @@
 						console.log('Настройки фона не найдены, используем дефолт');
 						// Если настроек нет, применяем фон по умолчанию
 						const defaultImage = 'london03.png';
-						const defaultUrl = `/word-learning-game/assets/bg-img/${defaultImage}`;
+						const defaultUrl = `/assets/bg-img/${defaultImage}`;
 						document.getElementById('game-container').style.backgroundImage = `url('${defaultUrl}')`;
 						document.getElementById('game-container').style.backgroundSize = 'cover';
 						document.getElementById('game-container').style.backgroundPosition = 'center';
