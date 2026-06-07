@@ -1,0 +1,293 @@
+﻿// level.js
+class WordLearningGame {
+  constructor(levelId) {
+    // Базовая проверка существования levelsData
+    if (!levelsData) {
+      console.error('Ошибка: данные уровней не загружены');
+      levelId = 1; // Переходим на первый уровень
+      this.levelData = levelsData[0];
+    }
+
+    // Проверка существования конкретного уровня
+    const levelIndex = levelId - 1;
+    if (!levelsData[levelIndex]) {
+      console.warn(`Уровень ${levelId} не существует. Переход на первый уровень`);
+      levelId = 1;
+      levelIndex = 0;
+    }
+
+    this.levelId = levelId;
+    this.totalLevels = 3; // Получаем значение из глобальной переменной
+    this.levelData = levelsData[levelIndex];
+    this.currentWordIndex = 0;
+    this.errors = 0;
+    this.maxErrors = 3;
+    this.isPlaying = true;
+
+    // Инициализация DOM‑элементов
+    try {
+      this.yesBtn = document.getElementById('yes');
+      this.noBtn = document.getElementById('no');
+      this.engWordElement = document.getElementById('eng-word');
+      this.rusWordElement = document.getElementById('rus-word');
+      this.progressElements = document.querySelectorAll('#progres span');
+      this.correctAnswer = '';
+
+      // Простая проверка существования основных элементов
+      if (!this.yesBtn || !this.noBtn) {
+        console.error('Ошибка: не найдены кнопки управления');
+        return;
+      }
+
+    } catch (error) {
+      console.error('Ошибка при инициализации:', error);
+      return;
+    }
+
+    this.init();
+  }
+
+  init() {
+    this.updateUI();
+    this.showCurrentWord();
+    this.setupEventListeners();
+  }
+  
+  
+  updateUI() {
+    document.getElementById('level').textContent = `Уровень ${this.levelData.id}`;
+    document.getElementById('thema').textContent = `Тема: ${this.levelData.theme}`;
+    document.getElementById('col-words').textContent = ` ${this.levelData.number} слов`;
+  }
+
+  showCurrentWord() {
+    if (this.currentWordIndex >= this.levelData.words.length) {
+      this.endLevel(true);
+      return;
+    }
+
+    const word = this.levelData.words[this.currentWordIndex];
+    document.getElementById('rus-word').textContent = word.ru;
+    this.generateRandomEnglishWord();
+    this.correctAnswer = word.en;
+    
+  }
+
+  generateRandomEnglishWord() {
+    const randomIndex = Math.floor(Math.random() * this.levelData.words.length);
+    const randomWord = this.levelData.words[randomIndex];
+    this.engWordElement.textContent = randomWord.en;
+    this.playAudio(randomWord.audio);
+  }
+
+  playAudio(audioPath) {
+    const audio = new Audio(audioPath);
+    audio.play();
+  }
+
+  setupEventListeners() {
+
+    // Обработчик для Yes___________________________________________________
+    this.yesBtn.addEventListener('mousedown', () => {
+      // Блокируем кнопку No
+      this.noBtn.enabled = false;
+
+      // Меняем картинку кнопки Yes
+      if (this.correctAnswer === this.engWordElement.textContent) {
+        this.yesBtn.querySelector('img').src = './assets/images/img_green.png';
+      } else {
+        this.yesBtn.querySelector('img').src = './assets/images/img_red.png';
+        //this.engWordElement.style.color = '#ffcc26';  подсказка
+        document.getElementById('tr-eng-word').textContent = this.correctAnswer; //подсказка
+      }
+    });
+
+    this.yesBtn.addEventListener('mouseup', () => {
+      this.noBtn.enabled = true;
+      // Возвращаем исходную картинку
+      this.yesBtn.querySelector('img').src = './assets/images/img_yes.png';
+      document.getElementById('tr-eng-word').textContent = ''; //скрываем подсазку
+
+      // Логика обработки ответа
+      if (this.correctAnswer !== this.engWordElement.textContent) {
+        if (this.errors < 3) this.errors++;
+        this.updateProgress();
+      }
+
+      // Проверка завершения уровня
+      if (this.currentWordIndex === this.levelData.words.length - 1 && this.errors === 0)
+        {
+          this.endLevel(true);
+        } else if (this.currentWordIndex === this.levelData.words.length - 1 || this.errors >= 3)
+        {
+          this.endLevel(false);
+        } else {
+          if (this.correctAnswer !== this.engWordElement.textContent) {
+            this.generateRandomEnglishWord();
+          } else {
+          this.currentWordIndex++;
+          this.showCurrentWord();
+          }
+        this.yesBtn.enabled = true;
+        this.noBtn.enabled = true;
+      }
+    });
+
+    // Обработчик для No__________________________________________________________
+    this.noBtn.addEventListener('mousedown', () => {
+      // Блокируем кнопку Yes
+      this.yesBtn.enabled = false;
+
+      // Меняем картинку кнопки No
+      if (this.correctAnswer !== this.engWordElement.textContent) {
+        this.noBtn.querySelector('img').src = './assets/images/img_green.png';
+      } else {
+        this.noBtn.querySelector('img').src = './assets/images/img_red.png';
+        // this.engWordElement.style.color = '#ffcc26';
+        document.getElementById('tr-eng-word').textContent = this.correctAnswer; //подсказка
+      }
+    });
+
+    this.noBtn.addEventListener('mouseup', () => {
+      this.yesBtn.enabled = true;
+      // Возвращаем исходную картинку
+      this.noBtn.querySelector('img').src = './assets/images/img_no.png';
+      document.getElementById('tr-eng-word').textContent = ''; //скрываем подсазку
+
+      // Логика обработки
+      if (this.correctAnswer === this.engWordElement.textContent) {
+        if (this.errors < 3) this.errors++;
+        this.updateProgress();
+      }
+      if (this.errors >= 3) {
+        this.endLevel(false);
+      } else {
+        if (this.correctAnswer !== this.engWordElement.textContent) {
+          this.generateRandomEnglishWord();
+          // this.playAudio(this.levelData.words[this.currentWordIndex].audio);
+          } else {
+            this.generateRandomEnglishWord();
+            this.playAudio(this.levelData.words[this.currentWordIndex].audio);
+          }
+        this.yesBtn.enabled = true;
+        this.noBtn.enabled = true;
+      }
+    });
+  }
+
+  updateProgress() {
+    this.progressElements.forEach((elem, index) => {
+      if (index < this.errors) {
+        elem.classList.add('error');
+      }
+    });
+  }  
+
+  restartLevel() {
+    this.currentWordIndex = 0;
+    this.errors = 0;
+    this.init();
+  }
+  
+
+  // Сохранение прогресса через localForage
+    async saveProgress() {
+    try {
+      // Получаем текущий прогресс
+        const currentProgress = await localforage.getItem('completedLevels') || Array(this.totalLevels).fill(0);
+         // Устанавливаем статус текущего уровня
+        currentProgress[this.levelId] = 1;
+         // Сохраняем изменения
+        await localforage.setItem('completedLevels', currentProgress);
+
+        console.log(`Сохранен прогресс для уровня ${this.levelId}:`, currentProgress);
+
+        // Уведомляем родительское окно
+        this.notifyParentAboutCompletion();        
+  
+        // Проверка сохраненных данных
+        console.log('Сохранение прогресса:', currentProgress);
+    } catch (error) {
+        console.error('Ошибка сохранения прогресса:', error);
+    }
+}
+
+    // Уведомление родительского окна о завершении уровня
+    notifyParentAboutCompletion() {
+        try {
+            if (window.parent && window.parent.postMessage) {
+                window.parent.postMessage({
+                    action: 'levelCompleted',
+                    levelId: this.levelId
+                }, '*');
+                console.log('Отправлено уведомление о завершении уровня:', this.levelId);
+            } else {
+                console.warn('Родительское окно не найдено');
+            }
+        } catch (error) {
+            console.error('Ошибка отправки сообщения:', error);
+        }
+    }
+
+    endLevel(isSuccess) {
+        this.isPlaying = false;
+        
+        if (isSuccess) {
+            // alert('Уровень пройден!');
+            
+            // Сохраняем прогресс
+            this.saveProgress();
+            
+            // Уведомляем родительское окно
+            this.notifyParentAboutCompletion();
+            
+            // Переходим на следующий уровень
+            // window.location.href = `level.html?id=${this.levelId + 1}`;
+        } else {
+            alert('Уровень не пройден. Попробуйте ещё раз!');
+            this.restartLevel();
+        }
+    }
+}
+
+// Инициализация игры с обработкой ошибок
+document.addEventListener('DOMContentLoaded', () => {
+  
+  try {
+    const urlParams = new URLSearchParams(window.location.search);
+    let levelId = parseInt(urlParams.get('id')) || 1;
+
+    console.log('Загружаем уровень:', levelId);
+
+    // Проверка перед созданием экземпляра
+    if (typeof levelsData === 'undefined' || !levelsData.length) {
+      console.warn('Данные уровней отсутствуют. Переход на первый уровень');
+      levelId = 1;
+    }
+
+    new WordLearningGame(levelId);
+  } catch (error) {
+    console.error('Ошибка при запуске игры:', error);
+    // Переходим на первый уровень при любой критической ошибке
+    window.location.href = 'level.html?id=1';
+  }
+});
+
+// Добавляем отдельный обработчик сообщений
+window.addEventListener('message', (event) => {
+  if (event.data && event.data.action === 'updateProgress') {
+    // Получаем данные из сообщения
+    const levelId = event.data.levelId;
+    const totalLevels = event.data.totalLevels;
+    
+    // Здесь нужно как-то передать эти данные в ваш игровой класс
+    // Вариант 1: если у вас есть экземпляр игры, можно сохранить данные в нем
+    // Вариант 2: можно сохранить в глобальную переменную
+    
+    // Пример сохранения в глобальную переменную
+    // window.gameTotalLevels = totalLevels;
+    
+    // Или, если у вас есть доступ к экземпляру игры:
+    // gameInstance.setTotalLevels(totalLevels);
+  }
+});

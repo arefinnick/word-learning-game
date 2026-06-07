@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">        
+		<title>About</title>
+		<link  href="./assets/style.css" type="text/css" rel="stylesheet">
+		<script src="./lib/localforage.min.js"></script>
+		<script src="./js/utils.js"></script>        
+    </head>
+
+    <body>
+		<div id="game-container" class="cont1">
+			<div class="cont2">
+				<div class="items1">
+					<button class="ico">
+						<a href="index.html"><img class="ques" src="./assets/images/iconka.png" alt="question" title="Выбор уровня" /></a>
+					</button>
+				</div>
+				<div class="items2">
+					<p class="f-bod">О приложении</p>
+				</div>
+				<div class="items3">
+					<button class="settings">
+						<a href="settings.html"><img class="ques" src="./assets/images/settings600.png" alt="settings" title="Настройки" /></a>
+					</button>					
+				</div>
+			</div>
+			<div class="cont3">
+				<div class="items2">
+				<p class="f-bod">Учим слова английского языка.</p>
+				<p class="f-bod">1.	Изучение английских слов в виде теста.</p>					   
+				<p class="f-bod">2.	Главная страница.
+					На странице размещаются кнопки с уровнями. Первый уровень доступен для прохождения,
+					 а остальные не активны. Прохождение уровня без ошибок активирует следующий уровень.</p>
+				<p class="f-bod">3.	Страница уровней.
+					На экране показывается русское слово, а ниже на строчку показывается английское слово
+					с озвученным произношением, которое меняется при нажатии кнопок «Yes» и «No». Кнопки
+					нужно нажимать при верном и неверном переводе. Если перевод верный и нажата кнопка «Yes»,
+					то появляется другое русское слово из этой группы слов. Если перевод неверный и нажата
+					кнопка «No», то русское слово остаётся, а английское появляется следующее в случайном
+					порядке. В группе содержится от 4 до 7 слов. Если нажатая кнопка не соответствует
+					правильному ответу, то вверху экрана фиксируется ошибка. Если сделана хотя бы 1 ошибка,
+					то уровень считается не пройденным и показывается модальное окно с предложением
+					пройти его снова и снова, пока не будет ошибок. Если уровень пройден без ошибок,
+					то показывается модальное окно с уведомлением, что уровень пройден и предложением
+					пройти его ещё раз для закрепления или перейти на новый уровень.</p>
+				<p class="f-bod">4.	Страница настроек.					
+					<p class="f-bod">○ Регулировка громкости звука.</p>
+					<p class="f-bod">○ Возможность выбрать картинку для фона.</p>
+					<p class="f-bod">○ Отображена статистика прохождения уровней.</p></br>
+				<p class="f-bod">Желаем удачи в пополнении Вашего словарного запаса английских слов.</p>
+				</div>
+			</div>
+		</div>
+
+		<script>
+			document.addEventListener('DOMContentLoaded', function() {
+				localforage.getItem('gameSettings').then(function(data) {
+					if (data && data.bgImage) {
+						// Находим контейнер игры
+						const gameContainer = document.getElementById('game-container');
+						if (gameContainer) {
+							// Формируем URL изображения (используем тот же путь, что в settings.js)
+							const imageUrl = `/WordLearningGame/assets/bg-img/${data.bgImage}`;
+
+							
+							// Устанавливаем фоновое изображение
+							gameContainer.style.backgroundImage = `url('${imageUrl}')`;
+							gameContainer.style.backgroundSize = 'cover';
+							gameContainer.style.backgroundPosition = 'center';
+							gameContainer.style.backgroundRepeat = 'no-repeat';
+							
+							console.log('Фон загружен:', data.bgImage);
+						}
+					} else {
+						console.log('Настройки фона не найдены, используем дефолт');
+						// Если настроек нет, применяем фон по умолчанию
+						const defaultImage = 'london03.png';
+						const defaultUrl = `/WordLearningGame/assets/bg-img/${defaultImage}`;
+						document.getElementById('game-container').style.backgroundImage = `url('${defaultUrl}')`;
+						document.getElementById('game-container').style.backgroundSize = 'cover';
+						document.getElementById('game-container').style.backgroundPosition = 'center';
+						document.getElementById('game-container').style.backgroundRepeat = 'no-repeat';
+					}
+				}).catch(function(error) {
+					console.error('Ошибка загрузки настроек:', error);
+				});
+			});
+		</script>
+		<script src="./js/orientation.js"></script>			
+        
+    </body>
+</html>

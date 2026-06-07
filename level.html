@@ -1,0 +1,111 @@
+<!-- level.html -->
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">        
+		<title>Level screen</title>
+		<link  href="./assets/style.css" type="text/css" rel="stylesheet"> 
+		<script src="./lib/localforage.min.js"></script>
+		<script src="./js/utils.js"></script>         
+    </head>
+
+    <body>
+		<div id="game-container" class="cont1">
+			<div class="cont2">
+				<div class="items1">
+					<button class="ico">
+						<a href="index.html"><img class="ques" src="./assets/images/iconka.png" alt="question" title="Выбор уровня" /></a>
+					</button>					
+				</div>
+				<div class="items2">
+					<p class="f-had" id="level">Уровень ?</p>
+				</div>
+				<div class="items3">
+					<button class="settings">
+						<a href="settings.html"><img class="ques" src="./assets/images/settings600.png" alt="settings" title="Настройки" /></a>
+					</button>					
+				</div>
+			</div>
+			<div class="cont4">
+				<div class="cont5" >
+					<div class="items2"><img class="lives" id="progres" src="./assets/images/3-lives.png" alt="Жизни" title="Жизни"/></div>
+				</div>
+				<div class="cont5" >
+					<div class="items1">
+						<div class="items1"><p class="f-bod" id="thema">? Тема ?</p></div>
+					</div>
+					<!-- <div class="items2"></div> -->
+					<div class="items3">					
+						<div class="items3"><p class="f-bod" id="word-counter"> ? слов ?</p></div>
+					</div>
+				</div>
+				<div class="cont5" >
+					<div class="items2"><p class="f-had" id="rus-word"> ? ? </p></div>
+				</div>
+				<div class="cont5" >
+					<div class="items2"><p class="f-bod-tr" id="tr-eng-word"></p></div>
+				</div>
+				<div class="cont5" >
+					<div class="items2"><p class="f-bod" > ЭТО </p></div>
+				</div>
+				<div class="cont5" >
+					<div class="items2"><p class="f-had" id="eng-word"> ☺</p></div>
+				</div>
+				<div class="cont5" >
+					<div class="items2"><p class="f-bod" > Да или Нет? </p></div>
+				</div>
+				
+				<div class="cont5" >
+					<div class="items1">
+						<button class="ico" id="yes"><img  src="./assets/images/img_yes.png" alt="yes" title="Yes" />
+						</button>
+					</div>
+						<div class="items2"></div>
+					<div class="items3">
+						<button class="ico" id="no"><img  src="./assets/images/img_no.png" alt="no" title="No" />
+						</button>
+					</div>
+				</div>				
+				</div>
+			</div>
+		</div>
+        <script src="./js/levelsData.js"></script>		
+		<script src="./js/level.js"></script>
+		<script>
+			document.addEventListener('DOMContentLoaded', function() {
+				localforage.getItem('gameSettings').then(function(data) {
+					if (data && data.bgImage) {
+						// Находим контейнер игры
+						const gameContainer = document.getElementById('game-container');
+						if (gameContainer) {
+							// Формируем URL изображения (используем тот же путь, что в settings.js)
+							const imageUrl = `/WordLearningGame/assets/bg-img/${data.bgImage}`;
+
+							
+							// Устанавливаем фоновое изображение
+							gameContainer.style.backgroundImage = `url('${imageUrl}')`;
+							gameContainer.style.backgroundSize = 'cover';
+							gameContainer.style.backgroundPosition = 'center';
+							gameContainer.style.backgroundRepeat = 'no-repeat';
+							
+							console.log('Фон загружен:', data.bgImage);
+						}
+					} else {
+						console.log('Настройки фона не найдены, используем дефолт');
+						// Если настроек нет, применяем фон по умолчанию
+						const defaultImage = 'london03.png';
+						const defaultUrl = `/WordLearningGame/assets/bg-img/${defaultImage}`;
+						document.getElementById('game-container').style.backgroundImage = `url('${defaultUrl}')`;
+						document.getElementById('game-container').style.backgroundSize = 'cover';
+						document.getElementById('game-container').style.backgroundPosition = 'center';
+						document.getElementById('game-container').style.backgroundRepeat = 'no-repeat';
+					}
+				}).catch(function(error) {
+					console.error('Ошибка загрузки настроек:', error);
+				});
+			});
+		</script>
+		<script src="./js/orientation.js"></script>			
+    </body>
+</html>

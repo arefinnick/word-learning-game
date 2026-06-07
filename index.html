@@ -1,0 +1,74 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">        
+		<title>LearningWords1</title>
+		<link  href="./assets/style.css" type="text/css" rel="stylesheet">
+		<script src="./lib/localforage.min.js"></script>
+		<script src="./js/utils.js"></script>       
+    </head>
+
+    <body>
+		<div id="game-container" class="cont1">
+			<div class="cont2">
+				<div class="items1">
+					<button class="ico">
+						<a href="about.html"><img class="ques" src="./assets/images/iconka.png" alt="about" title="О приложении" /></a>
+					</button>					
+				</div>
+				<div class="items2">
+					<p class="f-had">Учим слова</p>
+				</div>
+				<div class="items3">
+					<button class="settings">
+						<a href="settings.html"><img class="ques" src="./assets/images/settings600.png" alt="settings" title="Настройки" /></a>
+					</button>					
+				</div>
+			</div>
+			<div class="cont3level" id="board"></div>
+		</div>
+        
+		<script src="./js/levelsData.js"></script>
+
+		<script src="./js/index.js"></script>
+		
+		<script>
+			document.addEventListener('DOMContentLoaded', function() {
+				localforage.getItem('gameSettings').then(function(data) {
+					if (data && data.bgImage) {
+						// Находим контейнер игры
+						const gameContainer = document.getElementById('game-container');
+						if (gameContainer) {
+							// Формируем URL изображения (используем тот же путь, что в settings.js)
+							const imageUrl = `/WordLearningGame/assets/bg-img/${data.bgImage}`;
+
+							
+							// Устанавливаем фоновое изображение
+							gameContainer.style.backgroundImage = `url('${imageUrl}')`;
+							gameContainer.style.backgroundSize = 'cover';
+							gameContainer.style.backgroundPosition = 'center';
+							gameContainer.style.backgroundRepeat = 'no-repeat';
+							
+							console.log('Фон загружен:', data.bgImage);
+						}
+					} else {
+						console.log('Настройки фона не найдены, используем дефолт');
+						// Если настроек нет, применяем фон по умолчанию
+						const defaultImage = 'london03.png';
+						const defaultUrl = `/WordLearningGame/assets/bg-img/${defaultImage}`;
+						document.getElementById('game-container').style.backgroundImage = `url('${defaultUrl}')`;
+						document.getElementById('game-container').style.backgroundSize = 'cover';
+						document.getElementById('game-container').style.backgroundPosition = 'center';
+						document.getElementById('game-container').style.backgroundRepeat = 'no-repeat';
+					}
+				}).catch(function(error) {
+					console.error('Ошибка загрузки настроек:', error);
+				});
+			});
+		</script>
+		<script src="./js/orientation.js"></script>		
+	
+    </body>
+</html>

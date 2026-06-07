@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">        
+		<title>Settings</title>
+		<link  href="./assets/style.css" type="text/css" rel="stylesheet">
+		      
+    </head>
+
+    <body>
+		<div id="game-container" class="cont1">
+			<div class="cont2">
+				<div class="items1">
+					<button class="ico">
+						<a href="index.html"><img class="ques" src="./assets/images/iconka.png" alt="question" title="Выбор уровня" /></a>
+					</button>					
+				</div>
+				<div class="items2">
+					<p class="f-had">Настройки</p>
+				</div>
+				<div class="items3">
+					<button class="settings">
+						<img class="ques" src="./assets/images/settings600.png" alt="settings" title="Настройки" />
+					</button>					
+				</div>
+			</div>
+			<div class="cont3">
+				<p></p>
+				<div class="content-area">
+                    <!-- Громкость звуков -->
+                    <div class="setting-block">
+                        <h3>Громкость звуков</h3>
+                        <div class="slider-container">
+                            <input type="range" id="soundVolume" min="0" max="1" step="0.1" value="0.5">
+                        </div>
+                        <label>
+                            <input type="checkbox" id="sound-toggle">
+                            Включить звуки
+                        </label>
+                    </div>
+
+                    <!-- Громкость произношения -->
+                    <div class="setting-block">
+                        <h3>Громкость произношения</h3>
+                        <div class="slider-container">
+                            <input type="range" id="voiceVolume" min="0" max="1" step="0.1" value="0.5">
+                        </div>
+                        <label>
+                            <input type="checkbox" id="voice-toggle">
+                            Включить произношение
+                        </label>
+                    </div>
+
+                    <!-- Цвет фона -->
+                    <div class="setting-block">
+                        <h3>Картинка фона</h3>
+                        <div class="color-options">
+                            <label>
+                                <input type="radio" class="bg-color" name="bg-image" value="london03.png" checked> Лондон
+                            </label>
+                            <label>
+                                <input type="radio" class="bg-color" name="bg-image" value="new-york01.png"> Нью Йорк
+                            </label>
+                            <label>
+                                <input type="radio" class="bg-color" name="bg-image" value="washington02.png"> Вашингтон
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Статистика -->
+                    <div class="setting-block">
+                        <h3>Статистика</h3>
+                        <div id="stats-area">
+                            <p><strong>Пройдено уровней:</strong> <span id="levels-passed">0</span></p>
+                            <p><strong>Всего уровней:</strong> <span id="total-levels">3</span></p>
+                        </div>
+                    </div>
+
+                    <!-- Кнопка сохранения -->
+                    <button id="save-settings">Сохранить</button>
+                </div>
+			</div>
+		</div>
+        <script src="./lib/localforage.min.js"></script>
+        <script src="./js/settings.js"></script>
+        <script>
+			document.addEventListener('DOMContentLoaded', function() {
+				localforage.getItem('gameSettings').then(function(data) {
+					if (data && data.bgImage) {
+						// Находим контейнер игры
+						const gameContainer = document.getElementById('game-container');
+						if (gameContainer) {
+							// Формируем URL изображения (используем тот же путь, что в settings.js)
+							const imageUrl = `/WordLearningGame/assets/bg-img/${data.bgImage}`;
+
+							
+							// Устанавливаем фоновое изображение
+							gameContainer.style.backgroundImage = `url('${imageUrl}')`;
+							gameContainer.style.backgroundSize = 'cover';
+							gameContainer.style.backgroundPosition = 'center';
+							gameContainer.style.backgroundRepeat = 'no-repeat';
+							
+							console.log('Фон загружен:', data.bgImage);
+						}
+					} else {
+						console.log('Настройки фона не найдены, используем дефолт');
+						// Если настроек нет, применяем фон по умолчанию
+						const defaultImage = 'london03.png';
+						const defaultUrl = `/WordLearningGame/assets/bg-img/${defaultImage}`;
+						document.getElementById('game-container').style.backgroundImage = `url('${defaultUrl}')`;
+						document.getElementById('game-container').style.backgroundSize = 'cover';
+						document.getElementById('game-container').style.backgroundPosition = 'center';
+						document.getElementById('game-container').style.backgroundRepeat = 'no-repeat';
+					}
+				}).catch(function(error) {
+					console.error('Ошибка загрузки настроек:', error);
+				});
+			});
+		</script>
+		<script src="./js/orientation.js"></script>	
+    </body>
+</html>
