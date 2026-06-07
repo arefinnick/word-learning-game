@@ -69,7 +69,7 @@ function updateUI() {
 
 
 function getBackgroundImage(imageName) {
-    return `/WordLearningGame/assets/bg-img/${imageName}`; // Путь от корня сайта
+    return `/word-learning-game/assets/bg-img/${imageName}`; // Путь от корня сайта
 }
 console.log('Начинаем вешать события...');
 function setupEventListeners() {
