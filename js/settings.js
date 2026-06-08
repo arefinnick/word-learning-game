@@ -69,7 +69,7 @@ function updateUI() {
 
 
 function getBackgroundImage(imageName) {
-    return `/assets/bg-img/${imageName}`; // Путь от корня сайта
+    return `assets/bg-img/${imageName}`; // Путь от корня сайта
 }
 console.log('Начинаем вешать события...');
 function setupEventListeners() {
@@ -117,7 +117,7 @@ function setupEventListeners() {
     });
 });
 
-    // Для радио (цвет фона)
+    // Для радио (картинка фона)
     document.querySelectorAll('input[name="bg-image"]').forEach(radio => {
     radio.addEventListener('change', async () => {
         settings.bgImage = radio.value;
@@ -146,7 +146,7 @@ function setupEventListeners() {
         localforage.setItem('gameSettings', settings).then(() => {
             alert('Настройки сохранены!');
             console.log('Настройки сохранены');
-            window.location.href = 'index.html?';
+            // window.location.href = 'index.html?';
         });
     });
 }
