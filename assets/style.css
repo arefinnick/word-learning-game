@@ -13,9 +13,9 @@ body {
 }
 
 .cont1 {
-	width: 90vw;
+	width: 100vw;
     max-width: 405px;
-    height: 90vh;
+    height: 100vh;
     max-height: 720px;
 	border: 1px solid black;
 	border-radius: 10px;
@@ -29,9 +29,9 @@ body {
 
 .cont2 {
 	display: flex;	
-	width: 90vw;
+	width: 100vw;
     max-width: 385px;
-    height: 90vh;
+    height: 100vh;
     max-height: 60px;
     border: 1px solid whitesmoke;
 	border-radius: 10px;
@@ -47,10 +47,10 @@ body {
 }
 .cont3,
 .cont3level {	
-  	width: 90vw;
+  	width: 100vw;
     max-width: 385px;
-    height: 90vh;
-    max-height: 580px;
+    height: 100vh;
+    max-height: 628px;
 	margin: 10px;
 	padding: 5px;
 	border: 1px solid whitesmoke;
@@ -59,10 +59,10 @@ body {
 	overflow: auto;	
 }
 .cont4 {
-	width: 90vw;
+	width: 100vw;
     max-width: 385px;
-    height: 90vh;
-    max-height: 580px;
+    height: 100vh;
+    max-height: 628px;
 	margin: 10px;
 	padding: 10px;	
 	border: 1px solid whitesmoke;
@@ -73,9 +73,9 @@ body {
 	display: flex;
 	justify-content: center;
 	text-align: center;
-	min-width: 90%;
+	min-width: 100%;
 	margin: 10px auto;
-    padding: 5px;
+    padding: 10px;
 	/* border-radius: 10px; */
 	border: 1px solid whitesmoke;
 }
@@ -86,7 +86,23 @@ body {
 	min-width: 90%;
 	margin: 10px auto;
     padding: 5px;
-	border-radius: 10px;
+	/* border-radius: 10px; */
+	/* border: 1px solid whitesmoke; */
+    background: rgba(78, 95, 255, 0.5);
+	border: 1px solid #d7e2f8;
+	border-radius: 5px;
+	box-shadow: 2px 2px 0 4px rgb(1, 21, 138, 0.5);
+}
+.cont7 {
+    display: grid;
+	grid-template-columns: auto auto;
+	/* display: flex; */
+	justify-content: space-around;
+	/* text-align: center; */
+	/* min-width: 100%; */
+	/* margin: 10px auto; */
+    /* padding: 10px; */
+	/* border-radius: 10px; */
 	border: 1px solid whitesmoke;
 }
 
@@ -96,11 +112,12 @@ body {
 }
 .items2 {
 	margin: auto;
-	width: auto;	
-	background: rgba(78, 95, 255, 0.8);	
+	width: auto;
+    padding: 0px;	
+	background: rgba(78, 95, 255, 0.5);
 	border: 1px solid #d7e2f8;
 	border-radius: 5px;
-	box-shadow: 2px 2px 0 4px rgb(1, 21, 138);	
+	box-shadow: 2px 2px 0 4px rgb(1, 21, 138, 0.5);
 }
 .tema {
     grid-column: 1 / span2;
@@ -132,10 +149,10 @@ button {
     transform: scale(1.05); /* для увеличения */
 }
 .y-n {
-    width: 90vw;
-    max-width: 80px;
-    height: 90vh;
-    max-height: 80px; 
+    width: 100vw;
+    max-width: 70px;
+    height: 100vh;
+    max-height: 70px;
 }
  
 
@@ -179,9 +196,9 @@ button {
 	border-radius: 10px;
 }
 .lives{
-	width: 90vw;
+	width: 100vw;
     max-width: 100px;
-    height: 90vh;
+    height: 100vh;
     max-height: 33px;
 	display: block;
     margin: 0 auto;
@@ -395,40 +412,75 @@ button {
 } */
 
 /* Для очень маленьких экранов (до 480px) */
-/* @media (max-width: 480px) {
-    body {
-        padding: 10px;
-    }
-    .cont1 {
+ @media (max-width: 480px) {
+   .cont1 {
         width: 95vw;
         height: 95vh;
         margin: 5px;
     }
-     .cont3, .cont4, .cont3level {
+     .cont2{
+        width: 90vw;
+        height: 78vh;
+        padding: 3px;
+     }
+      .cont3, .cont4, .cont3level {
         width: calc(100% - 20px); 
-        height: 79vh;
+        height: 78vh;
+        margin: 0px auto;
+    }
+    .cont3level {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        gap: 3px;	
+  	
     }
     .cont5 {	
-	min-width: 90%;
-	margin: 10px auto;
-}
+        min-width: 90%;
+        margin: 0px auto;
+        padding: 10px;
+    }
+    .cont7{
+        margin: 20px;
+    }
+    .items1, .items3 {
+        margin: 3px;
+	    width: auto;
+
+    }
+    .ques {
+        /* margin: 2px; */
+        width: 30px;
+        height: 30px;
+    }
+    .lives{	
+        width: 80px;
+        height: auto;
+    }
     .f-had {
-        font-size: 18pt;
+        font-size: 28pt;
         text-shadow: 1px 1px 1px rgb(192, 97, 2);
     }
     .f-bod {
-        font-size: 16pt;
+        font-size: 20pt;
+        text-shadow: 1px 1px 1px rgb(192, 97, 2);
     }
-    .level_key {
-        width: 70px;
-        height: 70px;
+    .f-bod-tr{
+        height: 20px;
     }
     .cell {
-        width: 45px;
-        height: 45px;
+        width: 60px;
+        height: 60px;
         padding: 5px;
     }
-} */
+    .ques {
+        width: 30px;
+        height: 30px;
+    }
+    .y-n {
+    max-width: 60px;
+    max-height: 60px; 
+    }
+} 
 
 @media (max-width: 320px) {
     .cont1 {
@@ -444,6 +496,7 @@ button {
       .cont3, .cont4, .cont3level {
         width: calc(100% - 20px); 
         height: 78vh;
+        margin: 0px auto;
     }
     .cont3level {
         display: grid;
@@ -453,7 +506,8 @@ button {
     }
     .cont5 {	
         min-width: 90%;
-        margin: 3px auto;
+        margin: 0px auto;
+        padding: 5px;
     }
     .items1, .items3 {
         margin: 3px;
@@ -490,7 +544,7 @@ button {
         height: 30px;
     }
     .y-n {
-    max-width: 60px;
-    max-height: 60px; 
+    max-width: 50px;
+    max-height: 50px; 
 }
 }
