@@ -358,48 +358,39 @@ button {
 }
 
 /* Адаптивный дизайн */
-/*  портретный вид */
-/* @media (orientation: landscape) {
-  .game-container {
-    transform: rotate(-90deg);
-    transform-origin: left top;
-    width: 100vh;
-    height: 100vw;
-  }
-} */
 /* Для планшетов (768px и выше) */
-/* @media (min-width: 768px) {
+@media (min-width: 768px) {
     .cont1 {
-        width: 90vw;
-        height: 90vh;
+        width: 100vw;
+        height: 100vh;
     }
     .f-had {
         font-size: 24pt;
     }
-} */
+}
 
 /* Для мобильных телефонов (до 767px) */
 @media (max-width: 767px) {
     .cont1 {
         width: 95vw;
-        max-width: 767px;
-        height: 95vh;
-        max-height: 1364px;
+        /* max-width: 767px; */
+        height: auto;
+        /* max-height: 1364px; */
         margin: 5px;
     }
      .cont2{
         width: 90vw;
-        max-width: 767px;
+        /* max-width: 767px; */
         height: 95vh;
-        max-height: 80px;
+        /* max-height: 80px; */
         padding: 3px;
      }
       .cont3, .cont4, .cont3level {
-        width: calc(100% - 20px); 
-        max-width: 767px;
-        height: 95vh;
-        max-height: 800px;
-        margin: 0px auto;
+        width: 90vw; 
+        /* max-width: 767px; */
+        height: auto;
+        /* max-height: 1170px; */
+        margin: 10px auto;
     }
     .cont3level {
         display: grid;
@@ -426,7 +417,7 @@ button {
         height: 30px;
     }
     .lives{	
-        width: 80px;
+        width: 90vw;
         height: auto;
     }
     .f-had {
@@ -464,12 +455,12 @@ button {
     }
      .cont2{
         width: 90vw;
-        height: 78vh;
+        height: auto;
         padding: 3px;
      }
       .cont3, .cont4, .cont3level {
         width: calc(100% - 20px); 
-        height: 78vh;
+        height: auto;
         margin: 0px auto;
     }
     .cont3level {
@@ -501,15 +492,15 @@ button {
         height: auto;
     }
     .f-had {
-        font-size: 28pt;
+        font-size: 22pt;
         text-shadow: 1px 1px 1px rgb(192, 97, 2);
     }
     .f-bod {
-        font-size: 20pt;
+        font-size: 18pt;
         text-shadow: 1px 1px 1px rgb(192, 97, 2);
     }
     .f-bod-tr{
-        height: 20px;
+        height: 18px;
     }
     .cell {
         width: 60px;
@@ -534,12 +525,12 @@ button {
     }
      .cont2{
         width: 90vw;
-        height: 78vh;
+        height: 40px;
         padding: 3px;
      }
       .cont3, .cont4, .cont3level {
         width: calc(100% - 20px); 
-        height: 78vh;
+        height: 81vh;
         margin: 0px auto;
     }
     .cont3level {
