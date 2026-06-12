@@ -77,33 +77,23 @@ body {
 	margin: 10px auto;
     padding: 10px;
 	/* border-radius: 10px; */
-	border: 1px solid whitesmoke;
+	/* border: 1px solid whitesmoke; */
 }
 .cont6 {
     display: grid;
 	grid-template-columns: auto auto auto;
-    /* justify-content: center; */
 	min-width: 90%;
 	margin: 10px auto;
     padding: 5px;
-	/* border-radius: 10px; */
-	/* border: 1px solid whitesmoke; */
     background: rgba(78, 95, 255, 0.5);
 	border: 1px solid #d7e2f8;
 	border-radius: 5px;
-	box-shadow: 2px 2px 0 4px rgb(1, 21, 138, 0.5);
 }
 .cont7 {
     display: grid;
 	grid-template-columns: auto auto;
-	/* display: flex; */
 	justify-content: space-around;
-	/* text-align: center; */
-	/* min-width: 100%; */
-	/* margin: 10px auto; */
-    /* padding: 10px; */
-	/* border-radius: 10px; */
-	border: 1px solid whitesmoke;
+	/* border: 1px solid whitesmoke; */
 }
 
 .items1, .items3 {
@@ -117,7 +107,6 @@ body {
 	background: rgba(78, 95, 255, 0.5);
 	border: 1px solid #d7e2f8;
 	border-radius: 5px;
-	box-shadow: 2px 2px 0 4px rgb(1, 21, 138, 0.5);
 }
 .tema {
     grid-column: 1 / span2;
@@ -263,8 +252,8 @@ button {
 }
 
 /* Эффект наведения для активных кнопок */
+#save-settings:hover,
 .cell:hover {
-    background-color: rgba(255, 255, 255, 0.1);
     transform: scale(1.05);
     transition: all 0.2s ease;
 }
@@ -332,14 +321,21 @@ button {
 
 .setting-block {
     margin-bottom: 20px;
+    padding: 5px;
+    color: #ffcc26;
+	font-family: 'Times New Roman', Times, serif;
+	text-shadow: 2px 2px 2px rgb(192, 97, 2);
+    background: rgba(78, 95, 255, 0.5);
+	border: 1px solid #d7e2f8;
+	border-radius: 5px;
 }
 
 .slider-container {
     margin: 5px 0;
 }
-#sound-volume,
+#soundVolume,
 #sound-toggle,
-#voice-volume,
+#voiceVolume,
 #voice-toggle,
 .bg-color {
 	cursor: pointer;
@@ -350,24 +346,27 @@ button {
 }
 
 #save-settings {
-    background-color: gold;
-    color: #000099;
-    border: none;
+    color: #ffcc26;
+	text-shadow: 2px 2px 2px rgb(192, 97, 2);
     padding: 10px 20px;
     border-radius: 5px;
+    background-image: url(./images/key.png);
+	border: 1px solid #d7e2f8;
+	border-radius: 50px;
+	box-shadow: 2px 2px 0 4px rgb(1, 21, 138);
     cursor: pointer;
 }
 
 /* Адаптивный дизайн */
 /*  портретный вид */
-@media (orientation: landscape) {
+/* @media (orientation: landscape) {
   .game-container {
     transform: rotate(-90deg);
     transform-origin: left top;
     width: 100vh;
     height: 100vw;
   }
-}
+} */
 /* Для планшетов (768px и выше) */
 /* @media (min-width: 768px) {
     .cont1 {
