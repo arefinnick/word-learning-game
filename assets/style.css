@@ -114,26 +114,7 @@ body {
 }
 .w-count {
     grid-column: 3;
-}
-
-/* Эффект наведения для кнопок */
-a {
-	font-family: 'Times New Roman', Times, serif;
-	font-size: 14pt;
-	color: whitesmoke;
-	text-decoration: none;
-}
-a:hover {
-  	color: #faa61a;
-	text-decoration: underline;
-}
-
-.y-n, .lives, .ques {
-    width: 60px;
-    height: 60px;
-    margin: 5px auto;
-}
- 
+} 
 
 .f-had {
 	text-align: center;
@@ -169,9 +150,9 @@ a:hover {
     transition: transform 0.3s ease;
 }
 .ques {
-	margin: 8px;
-	width: 48px;
-	height: 48px;
+	margin: 3px;
+	width: 40px;
+	height: 40px;
 	border-radius: 50px;
 }
 .lives{
@@ -202,6 +183,23 @@ button:hover img,
 .ico:hover img,
 .settings:hover img {
     transform: scale(1.05); /* для увеличения */
+}
+/* Эффект наведения для кнопок */
+a {
+	font-family: 'Times New Roman', Times, serif;
+	font-size: 14pt;
+	color: whitesmoke;
+	text-decoration: none;
+}
+a:hover {
+  	color: #faa61a;
+	text-decoration: underline;
+}
+
+.y-n {
+    width: 60px;
+    height: 60px;
+    margin: 5px auto;
 }
 
 .cell {
@@ -411,7 +409,7 @@ button:hover img,
         text-shadow: 1px 1px 1px rgb(192, 97, 2);
     }
     .f-bod-tr{
-        height: 20px;
+        height: 30px;
     }
     .cell {
         width: 60px;
@@ -462,7 +460,10 @@ button:hover img,
     .items1, .items3 {
         margin: 3px;
 	    width: auto;
-
+    }
+    .items2 {
+	width: auto;
+    height: 30px;
     }
     .ques {
         width: 35px;

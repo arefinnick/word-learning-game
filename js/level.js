@@ -119,7 +119,11 @@ class WordLearningGame {
 
     const word = this.levelData.words[this.currentWordIndex];
     document.getElementById('rus-word').textContent = word.ru;
-    this.generateRandomEnglishWord();
+    this.playAudio(word.audioRu);
+    setTimeout(() => {        
+        this.generateRandomEnglishWord();
+      }, 800);
+    // this.generateRandomEnglishWord();
     this.correctAnswer = word.en;
     this.updateWordCounter(); // Обновляем счетчик при показе нового слова
   }
@@ -140,8 +144,8 @@ class WordLearningGame {
         
         // Отображаем новое слово
         this.engWordElement.textContent = randomWord.en;
-        this.playAudio(randomWord.audio);
-    }, 500);  // Задержка 1.5 секунды (можно настроить под свои нужды)
+        this.playAudio(randomWord.audioEn);
+    }, 300);  // Задержка 1.5 секунды (можно настроить под свои нужды)
   }
 
   playAudio(audioPath) {
@@ -161,7 +165,7 @@ class WordLearningGame {
     audio.play();
   }
 
-  // Метод для обновления изображения жизней
+      // Метод для обновления изображения жизней
     updateLivesImage() {
         // Проверяем границы
         const index = Math.min(this.errors, this.livesImages.length - 1);
@@ -270,7 +274,6 @@ class WordLearningGame {
         this.yesBtn.querySelector('img').src = './assets/images/img_green.png';
       } else {
         this.yesBtn.querySelector('img').src = './assets/images/img_red.png';
-        //this.engWordElement.style.color = '#ffcc26';  подсказка
         document.getElementById('tr-eng-word').textContent = this.correctAnswer; //подсказка
       }
     });
@@ -297,7 +300,6 @@ class WordLearningGame {
         } else if (this.currentWordIndex === this.levelData.words.length - 1 || this.errors >= 3)
         {
           this.playFunSound();
-          // this.endLevel(false);
           setTimeout(() => {        
         this.endLevel(false);
       }, 1200);
