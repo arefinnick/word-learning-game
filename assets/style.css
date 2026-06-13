@@ -173,17 +173,18 @@ button,
 .ico,
 .settings {
 	float: right;
-	background-color: transparent; /* Убираем фон кнопки */
-    border: none;                 /* Убираем рамку */
-    padding: 0;                   /* Убираем отступы вокруг картинки */
-    cursor: pointer;              /* Оставляем курсор «рука» для интерактивности */
-    outline: none;                /* Убираем синюю рамку при нажатии на клавиатуре */
+	background-color: transparent; 
+    border: none;                 
+    padding: 0;                   
+    cursor: pointer;             
+    outline: none;                
 }
 button:hover img,
 .ico:hover img,
 .settings:hover img {
-    transform: scale(1.05); /* для увеличения */
+    transform: scale(1.05);
 }
+
 /* Эффект наведения для кнопок */
 a {
 	font-family: 'Times New Roman', Times, serif;

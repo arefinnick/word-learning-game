@@ -277,6 +277,20 @@ class WordLearningGame {
         document.getElementById('tr-eng-word').textContent = this.correctAnswer; //подсказка
       }
     });
+    // Обработчик для Yes тап
+    this.yesBtn.addEventListener('touchstart', (e) => {
+      e.preventDefault(); // предотвращаем стандартные действия браузера
+      this.playSwitchButton();
+      this.noBtn.enabled = false;
+
+      // Меняем картинку кнопки Yes
+      if (this.correctAnswer === this.engWordElement.textContent) {
+        this.yesBtn.querySelector('img').src = './assets/images/img_green.png';
+      } else {
+        this.yesBtn.querySelector('img').src = './assets/images/img_red.png';
+        document.getElementById('tr-eng-word').textContent = this.correctAnswer; // подсказка
+      }
+    });
 
     this.yesBtn.addEventListener('mouseup', () => {
       this.playOffButton();
@@ -314,6 +328,46 @@ class WordLearningGame {
         this.noBtn.enabled = true;
       }
     });
+    this.yesBtn.addEventListener('touchend', (e) => {
+      e.preventDefault();
+      this.playOffButton();
+      this.noBtn.enabled = true;
+      // Возвращаем исходную картинку
+      this.yesBtn.querySelector('img').src = './assets/images/img_yes.png';
+      document.getElementById('tr-eng-word').textContent = ''; // скрываем подсказку
+
+      // Логика обработки ответа
+      if (this.correctAnswer !== this.engWordElement.textContent) {
+        this.handleError(); // Обрабатываем ошибку
+      }
+
+      // Проверка завершения уровня
+      if (this.currentWordIndex === this.levelData.words.length - 1 && this.errors === 0) {
+        this.playLevelVictory();
+        setTimeout(() => {
+          this.endLevel(true);
+        }, 1200);
+      } else if (this.currentWordIndex === this.levelData.words.length - 1 || this.errors >= 3) {
+        this.playFunSound();
+        setTimeout(() => {
+          this.endLevel(false);
+        }, 1200);
+      } else {
+        if (this.correctAnswer !== this.engWordElement.textContent) {
+          this.generateRandomEnglishWord();
+        } else {
+          this.currentWordIndex++;
+          this.showCurrentWord();
+        }
+        this.yesBtn.enabled = true;
+        this.noBtn.enabled = true;
+      }
+    });
+    this.yesBtn.addEventListener('touchcancel', () => {
+      // Восстанавливаем исходное состояние при прерывании касания
+      this.yesBtn.querySelector('img').src = './assets/images/img_yes.png';
+      this.noBtn.enabled = true;
+    });
 
     // Обработчик для No__________________________________________________________
     this.noBtn.addEventListener('mousedown', () => {
@@ -328,6 +382,19 @@ class WordLearningGame {
       } else {
         this.noBtn.querySelector('img').src = './assets/images/img_red.png';        
         document.getElementById('tr-eng-word').textContent = this.correctAnswer; //подсказка
+      }
+    });
+    this.noBtn.addEventListener('touchstart', (e) => {
+      e.preventDefault();
+      this.playSwitchButton();
+      this.yesBtn.enabled = false;
+
+      // Меняем картинку кнопки No
+      if (this.correctAnswer !== this.engWordElement.textContent) {
+        this.noBtn.querySelector('img').src = './assets/images/img_green.png';
+      } else {
+        this.noBtn.querySelector('img').src = './assets/images/img_red.png';
+        document.getElementById('tr-eng-word').textContent = this.correctAnswer; // подсказка
       }
     });
 
@@ -359,6 +426,38 @@ class WordLearningGame {
         this.yesBtn.enabled = true;
         this.noBtn.enabled = true;
       }
+    });
+    this.noBtn.addEventListener('touchend', (e) => {
+      e.preventDefault();
+      this.playOffButton();
+      this.yesBtn.enabled = true;
+      // Возвращаем исходную картинку
+      this.noBtn.querySelector('img').src = './assets/images/img_no.png';
+      document.getElementById('tr-eng-word').textContent = ''; // скрываем подсказку
+
+      // Логика обработки
+      if (this.correctAnswer === this.engWordElement.textContent) {
+        this.handleError(); // Обрабатываем ошибку
+      }
+      if (this.errors >= this.maxErrors) {
+        this.playFunSound();
+        setTimeout(() => {
+          this.endLevel(false);
+        }, 1200);
+      } else {
+        if (this.correctAnswer !== this.engWordElement.textContent) {
+          this.generateRandomEnglishWord();
+        } else {
+          this.generateRandomEnglishWord();
+        }
+        this.yesBtn.enabled = true;
+        this.noBtn.enabled = true;
+      }
+    });
+    this.noBtn.addEventListener('touchcancel', () => {
+      // Восстанавливаем исходное состояние при прерывании касания
+      this.noBtn.querySelector('img').src = './assets/images/img_no.png';
+      this.yesBtn.enabled = true;
     });
   }
 
