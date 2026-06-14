@@ -3,9 +3,7 @@
 // Глобальный объект для хранения настроек
 let settings = {
     soundVolume: 0.5,
-    soundEnabled: true,
     voiceVolume: 0.5,
-    voiceEnabled: true,
     bgImage: 'london03.png'
 };
 
@@ -49,8 +47,6 @@ console.log('Начинаем обновлять UI...');
 function updateUI() {
     document.getElementById('soundVolume').value = settings.soundVolume;
     document.getElementById('voiceVolume').value = settings.voiceVolume;
-    document.getElementById('sound-toggle').checked = settings.soundEnabled;
-    document.getElementById('voice-toggle').checked = settings.voiceEnabled;
 
     // Берем значение из настроек, если его нет — ставим первый вариант по умолчанию
     const bgValue = settings.bgImage || 'london03.png'; // 'london03.png' — ваш дефолтный фон
@@ -75,7 +71,6 @@ console.log('Начинаем вешать события...');
 function setupEventListeners() {
     // Собираем все ползунки
     const sliders = document.querySelectorAll('input[type="range"]');
-    const toggles = document.querySelectorAll('input[type="checkbox"]');
     const radio = document.querySelector('input[name="bg-image"]:checked');
 
     // Мгновенное обновление при изменении
@@ -93,25 +88,6 @@ function setupEventListeners() {
             console.error('Ошибка сохранения громкости:', err);
         } finally {
             // Всегда выключаем флаг после попытки сохранения
-            isSaving = false;
-        }
-    });
-});
-
-    toggles.forEach(el => {
-    el.addEventListener('change', async () => {
-        settings[el.id] = el.checked;
-
-        // Включаем флаг сохранения
-        isSaving = true;
-
-        try {
-            await localforage.setItem('gameSettings', settings);
-            console.log('Чекбокс сохранён:', el.id, el.checked);
-        } catch (err) {
-            console.error('Ошибка сохранения чекбокса:', err);
-        } finally {
-            // Всегда выключаем флаг
             isSaving = false;
         }
     });
@@ -146,7 +122,7 @@ function setupEventListeners() {
         localforage.setItem('gameSettings', settings).then(() => {
             alert('Настройки сохранены!');
             console.log('Настройки сохранены');
-            // window.location.href = 'index.html?';
+            window.location.href = 'index.html?';
         });
     });
 }
