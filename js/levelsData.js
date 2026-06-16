@@ -37,6 +37,45 @@ const levelsData = [
       { ru: "старый", audioRu: "./assets/audio/01-person/old-ru.mp3", en: "old", audioEn: "./assets/audio/01-person/old.mp3" },
       { ru: "молодой", audioRu: "./assets/audio/01-person/young-ru.mp3", en: "young", audioEn: "./assets/audio/01-person/young.mp3" }
     ]
+  },
+  {
+    id: 4,
+    theme: "Местоимения1",
+    number: "6",
+    words: [
+      { ru: "я", audioRu: "./assets/audio/02-pronouns/i-ru.mp3", en: "i", audioEn: "./assets/audio/02-pronouns/i.mp3" },
+      { ru: "ты", audioRu: "./assets/audio/02-pronouns/you-ru.mp3", en: "you", audioEn: "./assets/audio/02-pronouns/you.mp3" },
+      { ru: "мы", audioRu: "./assets/audio/02-pronouns/we-ru.mp3", en: "we", audioEn: "./assets/audio/02-pronouns/we.mp3" },
+      { ru: "они", audioRu: "./assets/audio/02-pronouns/they-ru.mp3", en: "they", audioEn: "./assets/audio/02-pronouns/they.mp3" },
+      { ru: "он", audioRu: "./assets/audio/02-pronouns/he-ru.mp3", en: "he", audioEn: "./assets/audio/02-pronouns/he.mp3" },
+      { ru: "она", audioRu: "./assets/audio/02-pronouns/she-ru.mp3", en: "she", audioEn: "./assets/audio/02-pronouns/she.mp3" }
+    ]
+  },
+  {
+    id: 5,
+    theme: "Местоимения2",
+    number: "6",
+    words: [
+      { ru: "оно,это", audioRu: "./assets/audio/02-pronouns/it-ru.mp3", en: "it", audioEn: "./assets/audio/02-pronouns/it.mp3" },
+      { ru: "мой", audioRu: "./assets/audio/02-pronouns/my-ru.mp3", en: "my", audioEn: "./assets/audio/02-pronouns/my.mp3" },
+      { ru: "мне", audioRu: "./assets/audio/02-pronouns/me-ru.mp3", en: "me", audioEn: "./assets/audio/02-pronouns/me.mp3" },
+      { ru: "твой", audioRu: "./assets/audio/02-pronouns/your-ru.mp3", en: "your", audioEn: "./assets/audio/02-pronouns/your.mp3" },
+      { ru: "наш", audioRu: "./assets/audio/02-pronouns/our-ru.mp3", en: "our", audioEn: "./assets/audio/02-pronouns/our.mp3" },
+      { ru: "нам", audioRu: "./assets/audio/02-pronouns/us-ru.mp3", en: "us", audioEn: "./assets/audio/02-pronouns/us.mp3" }
+    ]
+  },
+  {
+    id: 6,
+    theme: "Местоимения3",
+    number: "6",
+    words: [
+      { ru: "их", audioRu: "./assets/audio/02-pronouns/their-ru.mp3", en: "their", audioEn: "./assets/audio/02-pronouns/their.mp3" },
+      { ru: "им", audioRu: "./assets/audio/02-pronouns/them-ru.mp3", en: "them", audioEn: "./assets/audio/02-pronouns/them.mp3" },
+      { ru: "его", audioRu: "./assets/audio/02-pronouns/his-ru.mp3", en: "his", audioEn: "./assets/audio/02-pronouns/his.mp3" },
+      { ru: "ему", audioRu: "./assets/audio/02-pronouns/him-ru.mp3", en: "him", audioEn: "./assets/audio/02-pronouns/him.mp3" },
+      { ru: "ее", audioRu: "./assets/audio/02-pronouns/her-ru.mp3", en: "her", audioEn: "./assets/audio/02-pronouns/her.mp3" },
+      { ru: "его,ее", audioRu: "./assets/audio/02-pronouns/its-ru.mp3", en: "its", audioEn: "./assets/audio/02-pronouns/its.mp3" }
+    ]
   }
   // ... остальные уровни
 ];

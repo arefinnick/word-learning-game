@@ -17,7 +17,7 @@ class WordLearningGame {
     }
 
     this.levelId = levelId;
-    this.totalLevels = 3; // Получаем значение из глобальной переменной
+    this.totalLevels = 171; // Получаем значение из глобальной переменной
     this.levelData = levelsData[levelIndex];    
 
     // Инициализация DOM‑элементов
