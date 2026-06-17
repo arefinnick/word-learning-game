@@ -76,6 +76,45 @@ const levelsData = [
       { ru: "ее", audioRu: "./assets/audio/02-pronouns/her-ru.mp3", en: "her", audioEn: "./assets/audio/02-pronouns/her.mp3" },
       { ru: "его,ее", audioRu: "./assets/audio/02-pronouns/its-ru.mp3", en: "its", audioEn: "./assets/audio/02-pronouns/its.mp3" }
     ]
+  },
+  {
+    id: 7,
+    theme: "Семья1",
+    number: "6",
+    words: [      
+      { ru: "родители", audioRu: "./assets/audio/03-family/parents-ru.mp3", en: "parents", audioEn: "./assets/audio/03-family/parents.mp3" },
+      { ru: "отец", audioRu: "./assets/audio/03-family/father-ru.mp3", en: "father", audioEn: "./assets/audio/03-family/father.mp3" },
+      { ru: "мать", audioRu: "./assets/audio/03-family/mother-ru.mp3", en: "mother", audioEn: "./assets/audio/03-family/mother.mp3" },
+      { ru: "мама", audioRu: "./assets/audio/03-family/mom-ru.mp3", en: "mom", audioEn: "./assets/audio/03-family/mom.mp3" },
+      { ru: "муж", audioRu: "./assets/audio/03-family/husband-ru.mp3", en: "husband", audioEn: "./assets/audio/03-family/husband.mp3" },
+      { ru: "жена", audioRu: "./assets/audio/03-family/wife-ru.mp3", en: "wife", audioEn: "./assets/audio/03-family/wife.mp3" }
+    ]
+  },
+  {
+    id: 8,
+    theme: "Семья2",
+    number: "6",
+    words: [
+      { ru: "сын", audioRu: "./assets/audio/03-family/son-ru.mp3", en: "son", audioEn: "./assets/audio/03-family/son.mp3" },
+      { ru: "дочь", audioRu: "./assets/audio/03-family/daughter-ru.mp3", en: "daughter", audioEn: "./assets/audio/03-family/daughter.mp3" },
+      { ru: "брат", audioRu: "./assets/audio/03-family/brother-ru.mp3", en: "brother", audioEn: "./assets/audio/03-family/brother.mp3" },
+      { ru: "сестра", audioRu: "./assets/audio/03-family/sister-ru.mp3", en: "sister", audioEn: "./assets/audio/03-family/sister.mp3" },
+      { ru: "дедушка", audioRu: "./assets/audio/03-family/grandfather-ru.mp3", en: "grandfather", audioEn: "./assets/audio/03-family/grandfather.mp3" },
+      { ru: "бабушка", audioRu: "./assets/audio/03-family/grandmother-ru.mp3", en: "grandmother", audioEn: "./assets/audio/03-family/grandmother.mp3" }
+    ]
+  },
+  {
+    id: 9,
+    theme: "Семья3",
+    number: "6",
+    words: [
+      { ru: "семья", audioRu: "./assets/audio/03-family/family-ru.mp3", en: "family", audioEn: "./assets/audio/03-family/family.mp3" },
+      { ru: "дядя", audioRu: "./assets/audio/03-family/uncle-ru.mp3", en: "uncle", audioEn: "./assets/audio/03-family/uncle.mp3" },
+      { ru: "тетя", audioRu: "./assets/audio/03-family/aunt-ru.mp3", en: "aunt", audioEn: "./assets/audio/03-family/aunt.mp3" },
+      { ru: "племянник", audioRu: "./assets/audio/03-family/nephew-ru.mp3", en: "nephew", audioEn: "./assets/audio/03-family/nephew.mp3" },
+      { ru: "племянница", audioRu: "./assets/audio/03-family/niece-ru.mp3", en: "niece", audioEn: "./assets/audio/03-family/niece.mp3" },
+      { ru: "двоюродный брат,сестра", audioRu: "./assets/audio/03-family/cousin-ru.mp3", en: "cousin", audioEn: "./assets/audio/03-family/cousin.mp3" }
+    ]
   }
   // ... остальные уровни
 ];
