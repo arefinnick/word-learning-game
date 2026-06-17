@@ -2,7 +2,9 @@
 
 // Глобальный объект для хранения настроек
 let settings = {
+    soundEnabled: true,
     soundVolume: 0.5,
+    voiceEnabled: true,
     voiceVolume: 0.5,
     bgImage: 'london03.png'
 };
@@ -46,7 +48,8 @@ async function loadSettings() {
 console.log('Начинаем обновлять UI...');
 function updateUI() {
     document.getElementById('soundVolume').value = settings.soundVolume;
-    document.getElementById('voiceVolume').value = settings.voiceVolume;
+    document.getElementById('voiceVolume').value = settings.voiceVolume;    
+    console.log('Громкость обновлена');
 
     // Берем значение из настроек, если его нет — ставим первый вариант по умолчанию
     const bgValue = settings.bgImage || 'london03.png'; // 'london03.png' — ваш дефолтный фон
@@ -75,47 +78,47 @@ function setupEventListeners() {
 
     // Мгновенное обновление при изменении
     sliders.forEach(el => {
-    el.addEventListener('input', async () => {
-        settings[el.id] = parseFloat(el.value);
+        el.addEventListener('input', async () => {
+            settings[el.id] = parseFloat(el.value);
 
-        // Включаем флаг сохранения
-        isSaving = true;
+            // Включаем флаг сохранения
+            isSaving = true;
 
-        try {
-            await localforage.setItem('gameSettings', settings);
-            console.log('Громкость сохранена:', el.id, settings[el.id]);
-        } catch (err) {
-            console.error('Ошибка сохранения громкости:', err);
-        } finally {
-            // Всегда выключаем флаг после попытки сохранения
-            isSaving = false;
-        }
+            try {
+                await localforage.setItem('gameSettings', settings);
+                console.log('Громкость сохранена:', el.id, settings[el.id]);
+            } catch (err) {
+                console.error('Ошибка сохранения громкости:', err);
+            } finally {
+                // Всегда выключаем флаг после попытки сохранения
+                isSaving = false;
+            }
+        });
     });
-});
 
     // Для радио (картинка фона)
     document.querySelectorAll('input[name="bg-image"]').forEach(radio => {
-    radio.addEventListener('change', async () => {
-        settings.bgImage = radio.value;
+        radio.addEventListener('change', async () => {
+            settings.bgImage = radio.value;
         
-        // Сразу применяем новый фон
-        document.getElementById('game-container').style.backgroundImage = `url('${getBackgroundImage(settings.bgImage)}')`;
+            // Сразу применяем новый фон
+            document.getElementById('game-container').style.backgroundImage = `url('${getBackgroundImage(settings.bgImage)}')`;
 
-        // Включаем флаг сохранения
-        isSaving = true;
+            // Включаем флаг сохранения
+            isSaving = true;
 
-        try {
-            await localforage.setItem('gameSettings', settings);
-            console.log('Фон сохранён:', settings.bgImage);
-        } catch (err) {
-            console.error('Ошибка сохранения фона:', err);
-        } finally {
-            // Всегда выключаем флаг
-            isSaving = false;
-        }
-        
+            try {
+                await localforage.setItem('gameSettings', settings);
+                console.log('Фон сохранён:', settings.bgImage);
+            } catch (err) {
+                console.error('Ошибка сохранения фона:', err);
+            } finally {
+                // Всегда выключаем флаг
+                isSaving = false;
+            }
+            
+        });
     });
-});
 
     // Кнопка сохранения (просто записывает в localforage)
     document.getElementById('save-settings').addEventListener('click', () => {
@@ -125,4 +128,50 @@ function setupEventListeners() {
             window.location.href = 'index.html?';
         });
     });
+
+    // Кнопка сброса настроек
+    document.getElementById('reset-settings').addEventListener('click', () => {
+        const confirmReset = confirm('Вы уверены, что хотите сбросить все настройки к значениям по умолчанию?');
+        if (confirmReset) {
+            resetSettings();
+        }
+    });
+
+    // Функция сброса настроек: очистка localforage и восстановление значений по умолчанию
+    async function resetSettings() {
+        // Ждём, пока завершится сохранение (если идёт)
+        while (isSaving) {
+            await new Promise(resolve => setTimeout(resolve, 50));
+        }
+
+        try {
+            // Очищаем всё хранилище localforage
+            await localforage.clear();
+            console.log('Хранилище очищено');
+
+            // Восстанавливаем настройки по умолчанию
+            settings = {
+                soundEnabled: true,
+                soundVolume: 0.5,
+                voiceEnabled: true,
+                voiceVolume: 0.5,
+                bgImage: 'london03.png'
+            };
+
+            // Обновляем UI под новые настройки
+            updateUI();
+
+            // Сохраняем дефолтные настройки в localforage
+            isSaving = true;
+            await localforage.setItem('gameSettings', settings);
+            console.log('Дефолтные настройки сохранены');
+
+            alert('Настройки сброшены к значениям по умолчанию!');
+        } catch (err) {
+            console.error('Ошибка при сбросе настроек:', err);
+            alert('Произошла ошибка при сбросе настроек. Проверьте консоль.');
+        } finally {
+            isSaving = false;
+        }
+    }
 }

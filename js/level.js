@@ -72,7 +72,8 @@ class WordLearningGame {
             voiceVolume: 0.5
         };
     
-        this.init(); // Инициализируем игру уже с настройками   
+        this.init(); // Инициализируем игру уже с настройками
+        console.log('Настройки загружены');   
 
    });
    
@@ -154,7 +155,7 @@ class WordLearningGame {
 
   // 1. Проверяем, разрешены ли звуки в настройках
   if (!this.settings.voiceEnabled) {
-      console.log('Звуки отключены в настройках');
+      console.log('Голос отключен в настройках');
       return; // Выходим из функции, не воспроизводя звук
     }
 
