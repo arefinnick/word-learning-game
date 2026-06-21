@@ -219,8 +219,8 @@ const levelsData = [
       { ru: "кровь", audioRu: "./assets/audio/05-health/blood-ru.mp3", en: "blood", audioEn: "./assets/audio/05-health/blood.mp3" },
       { ru: "синяк", audioRu: "./assets/audio/05-health/bruise-ru.mp3", en: "bruise", audioEn: "./assets/audio/05-health/bruise.mp3" },
       { ru: "кашель", audioRu: "./assets/audio/05-health/cough-ru.mp3", en: "cough", audioEn: "./assets/audio/05-health/cough.mp3" },
-      { ru: "кашлять", audioRu: "./assets/audio/05-health/to cough-ru.mp3", en: "to cough", audioEn: "./assets/audio/05-health/to cough.mp3" },
-      { ru: "головокружение", audioRu: "./assets/05-health/05-health/dizziness-ru.mp3", en: "dizziness", audioEn: "./assets/audio/05-health/dizziness.mp3" }
+      { ru: "кашлять", audioRu: "./assets/audio/05-health/to-cough-ru.mp3", en: "to cough", audioEn: "./assets/audio/05-health/to-cough.mp3" },
+      { ru: "головокружение", audioRu: "./assets/audio/05-health/dizziness-ru.mp3", en: "dizziness", audioEn: "./assets/audio/05-health/dizziness.mp3" }
     ]
   },
   {
@@ -228,11 +228,11 @@ const levelsData = [
     theme: "Здоровье2",
     number: "5",
     words: [
-      { ru: "жар", audioRu: "./assets/audio/05-health/fever-ru.mp3", en: "fever", audioEn: "./assets/audio/05-health/fever.mp3" },
+      { ru: "лихорадка", audioRu: "./assets/audio/05-health/fever-ru.mp3", en: "fever", audioEn: "./assets/audio/05-health/fever.mp3" },
       { ru: "грипп", audioRu: "./assets/audio/05-health/flu-ru.mp3", en: "flu", audioEn: "./assets/audio/05-health/flu.mp3" },
       { ru: "боль", audioRu: "./assets/audio/05-health/pain-ru.mp3", en: "pain", audioEn: "./assets/audio/05-health/pain.mp3" },
       { ru: "насморк", audioRu: "./assets/audio/05-health/running-nose-ru.mp3", en: "running nose", audioEn: "./assets/audio/05-health/running-nose.mp3" },
-      { ru: "пятно,точка", audioRu: "./assets/05-health/05-health/spot-ru.mp3", en: "spot", audioEn: "./assets/audio/05-health/spot.mp3" }
+      { ru: "пятно,точка", audioRu: "./assets/audio/05-health/spot-ru.mp3", en: "spot", audioEn: "./assets/audio/05-health/spot.mp3" }
     ]
   },
   {
@@ -242,9 +242,9 @@ const levelsData = [
     words: [
       { ru: "рана", audioRu: "./assets/audio/05-health/wound-ru.mp3", en: "wound", audioEn: "./assets/audio/05-health/wound.mp3" },
       { ru: "чихать", audioRu: "./assets/audio/05-health/to-sneeze-ru.mp3", en: "to sneeze", audioEn: "./assets/audio/05-health/to-sneeze.mp3" },
-      { ru: "ранить", audioRu: "./assets/audio/05-health/to-hurt-ru.mp3", en: "to hurt", audioEn: "./assets/audio/05-health/to-hurt.mp3" },
-      { ru: "в хорошей форме", audioRu: "./assets/audio/05-health/fit-ru.mp3", en: "fit", audioEn: "./assets/audio/05-health/fit.mp3" },
-      { ru: "Здоровье", audioRu: "./assets/05-health/05-health/health-ru.mp3", en: "Health", audioEn: "./assets/audio/05-health/health.mp3" }
+      { ru: "причинять боль", audioRu: "./assets/audio/05-health/to-hurt-ru.mp3", en: "to hurt", audioEn: "./assets/audio/05-health/to-hurt.mp3" },
+      { ru: "подходить", audioRu: "./assets/audio/05-health/fit-ru.mp3", en: "fit", audioEn: "./assets/audio/05-health/fit.mp3" },
+      { ru: "Здоровье", audioRu: "./assets/audio/05-health/health-ru.mp3", en: "Health", audioEn: "./assets/audio/05-health/health.mp3" }
     ]
   },
   {
@@ -253,9 +253,9 @@ const levelsData = [
     number: "5",
     words: [
       { ru: "здоровый", audioRu: "./assets/audio/05-health/healthy-ru.mp3", en: "healthy", audioEn: "./assets/audio/05-health/healthy.mp3" },
-      { ru: "опухший", audioRu: "./assets/audio/05-health/swollen-ru.mp3", en: "swollen", audioEn: "./assets/audio/05-health/swollen.mp3" },
+      { ru: "вздутый", audioRu: "./assets/audio/05-health/swollen-ru.mp3", en: "swollen", audioEn: "./assets/audio/05-health/swollen.mp3" },
       { ru: "больной", audioRu: "./assets/audio/05-health/sick-ru.mp3", en: "sick", audioEn: "./assets/audio/05-health/sick.mp3" },
-      { ru: "толстый,жирный", audioRu: "./assets/audio/05-health/fat-ru.mp3", en: "fat", audioEn: "./assets/audio/05-health/fat.mp3" },
+      { ru: "жир", audioRu: "./assets/audio/05-health/fat-ru.mp3", en: "fat", audioEn: "./assets/audio/05-health/fat.mp3" },
       { ru: "мертвый", audioRu: "./assets/audio/05-health/dead-ru.mp3", en: "dead", audioEn: "./assets/audio/05-health/dead.mp3" }
     ]
   },
@@ -266,9 +266,9 @@ const levelsData = [
     words: [
       { ru: "положительный", audioRu: "./assets/audio/06-positive-adjectives/positive-ru.mp3", en: "positive", audioEn: "./assets/audio/06-positive-adjectives/positive.mp3" },
       { ru: "удивительный", audioRu: "./assets/audio/06-positive-adjectives/amazing-ru.mp3", en: "amazing", audioEn: "./assets/audio/06-positive-adjectives/amazing.mp3" },
-      { ru: "красивая", audioRu: "./assets/audio/06-positive-adjectives/beautiful-ru.mp3", en: "beautiful", audioEn: "./assets/audio/06-positive-adjectives/beautiful.mp3" },
+      { ru: "прекрасный", audioRu: "./assets/audio/06-positive-adjectives/beautiful-ru.mp3", en: "beautiful", audioEn: "./assets/audio/06-positive-adjectives/beautiful.mp3" },
       { ru: "красивый", audioRu: "./assets/audio/06-positive-adjectives/handsome-ru.mp3", en: "handsome", audioEn: "./assets/audio/06-positive-adjectives/handsome.mp3" },
-      { ru: "смелый", audioRu: "./assets/audio/06-positive-adjectives/brave-ru.mp3", en: "brave", audioEn: "./assets/audio/06-positive-adjectives/brave.mp3" }
+      { ru: "храбрый", audioRu: "./assets/audio/06-positive-adjectives/brave-ru.mp3", en: "brave", audioEn: "./assets/audio/06-positive-adjectives/brave.mp3" }
     ]
   },
   {
@@ -290,7 +290,7 @@ const levelsData = [
     number: "6",
     words: [
       { ru: "справедливый", audioRu: "./assets/audio/06-positive-adjectives/fair-ru.mp3", en: "fair", audioEn: "./assets/audio/06-positive-adjectives/fair.mp3" },
-      { ru: "прекрасный,прекрасно", audioRu: "./assets/audio/06-positive-adjectives/fine-ru.mp3", en: "fine", audioEn: "./assets/audio/06-positive-adjectives/fine.mp3" },
+      { ru: "хорошо", audioRu: "./assets/audio/06-positive-adjectives/fine-ru.mp3", en: "fine", audioEn: "./assets/audio/06-positive-adjectives/fine.mp3" },
       { ru: "дружелюбный", audioRu: "./assets/audio/06-positive-adjectives/friendly-ru.mp3", en: "friendly", audioEn: "./assets/audio/06-positive-adjectives/friendly.mp3" },
       { ru: "хороший", audioRu: "./assets/audio/06-positive-adjectives/good-ru.mp3", en: "good", audioEn: "./assets/audio/06-positive-adjectives/good.mp3" },
       { ru: "счастливый", audioRu: "./assets/audio/06-positive-adjectives/happy-ru.mp3", en: "happy", audioEn: "./assets/audio/06-positive-adjectives/happy.mp3" },
@@ -317,7 +317,7 @@ const levelsData = [
     words: [
       { ru: "отрицательный", audioRu: "./assets/audio/07-negative-adjectives/negative-ru.mp3", en: "negative", audioEn: "./assets/audio/07-negative-adjectives/negative.mp3" },
       { ru: "сердитый", audioRu: "./assets/audio/07-negative-adjectives/angry-ru.mp3", en: "angry", audioEn: "./assets/audio/07-negative-adjectives/angry.mp3" },
-      { ru: "раздражающий", audioRu: "./assets/audio/07-negative-adjectives/annoying-ru.mp3", en: "annoying", audioEn: "./assets/07-negative-adjectives/annoying.mp3" },
+      { ru: "раздражающий", audioRu: "./assets/audio/07-negative-adjectives/annoying-ru.mp3", en: "annoying", audioEn: "./assets/audio/07-negative-adjectives/annoying.mp3" },
       { ru: "ужасный", audioRu: "./assets/audio/07-negative-adjectives/awful-ru.mp3", en: "awful", audioEn: "./assets/audio/07-negative-adjectives/awful.mp3" },
       { ru: "плохой", audioRu: "./assets/audio/07-negative-adjectives/bad-ru.mp3", en: "bad", audioEn: "./assets/audio/07-negative-adjectives/bad.mp3" },
       { ru: "сумасшедший", audioRu: "./assets/audio/07-negative-adjectives/crazy-ru.mp3", en: "crazy", audioEn: "./assets/audio/07-negative-adjectives/crazy.mp3" }
@@ -330,7 +330,7 @@ const levelsData = [
     words: [
       { ru: "опасный", audioRu: "./assets/audio/07-negative-adjectives/dangerous-ru.mp3", en: "dangerous", audioEn: "./assets/audio/07-negative-adjectives/dangerous.mp3" },
       { ru: "ревнивый", audioRu: "./assets/audio/07-negative-adjectives/jealous-ru.mp3", en: "jealous", audioEn: "./assets/audio/07-negative-adjectives/jealous.mp3" },
-      { ru: "ленивый", audioRu: "./assets/audio/07-negative-adjectives/lazy-ru.mp3", en: "lazy", audioEn: "./assets/07-negative-adjectives/lazy.mp3" },
+      { ru: "ленивый", audioRu: "./assets/audio/07-negative-adjectives/lazy-ru.mp3", en: "lazy", audioEn: "./assets/audio/07-negative-adjectives/lazy.mp3" },
       { ru: "нервный", audioRu: "./assets/audio/07-negative-adjectives/nervous-ru.mp3", en: "nervous", audioEn: "./assets/audio/07-negative-adjectives/nervous.mp3" },
       { ru: "бедный", audioRu: "./assets/audio/07-negative-adjectives/poor-ru.mp3", en: "poor", audioEn: "./assets/audio/07-negative-adjectives/poor.mp3" },
       { ru: "грубый", audioRu: "./assets/audio/07-negative-adjectives/rude-ru.mp3", en: "rude", audioEn: "./assets/audio/07-negative-adjectives/rude.mp3" }
@@ -343,7 +343,7 @@ const levelsData = [
     words: [
       { ru: "нейтральный", audioRu: "./assets/audio/08-neutral-adjectives/neutral-ru.mp3", en: "neutral", audioEn: "./assets/audio/08-neutral-adjectives/neutral.mp3" },
       { ru: "средний", audioRu: "./assets/audio/08-neutral-adjectives/average-ru.mp3", en: "average", audioEn: "./assets/audio/08-neutral-adjectives/average.mp3" },
-      { ru: "скучный", audioRu: "./assets/audio/08-neutral-adjectives/boring-ru.mp3", en: "boring", audioEn: "./assets/08-neutral-adjectives/boring.mp3" },
+      { ru: "скучный", audioRu: "./assets/audio/08-neutral-adjectives/boring-ru.mp3", en: "boring", audioEn: "./assets/audio/08-neutral-adjectives/boring.mp3" },
       { ru: "занятой", audioRu: "./assets/audio/08-neutral-adjectives/busy-ru.mp3", en: "busy", audioEn: "./assets/audio/08-neutral-adjectives/busy.mp3" },
       { ru: "неуклюжий", audioRu: "./assets/audio/08-neutral-adjectives/clumsy-ru.mp3", en: "clumsy", audioEn: "./assets/audio/08-neutral-adjectives/clumsy.mp3" },
       { ru: "дорогой", audioRu: "./assets/audio/08-neutral-adjectives/dear-ru.mp3", en: "dear", audioEn: "./assets/audio/08-neutral-adjectives/dear.mp3" }
@@ -354,11 +354,11 @@ const levelsData = [
     theme: "Нейтральные2",
     number: "6",
     words: [
-      { ru: "другой", audioRu: "./assets/audio/08-neutral-adjectives/different-ru.mp3", en: "different", audioEn: "./assets/audio/08-neutral-adjectives/different.mp3" },
+      { ru: "различный", audioRu: "./assets/audio/08-neutral-adjectives/different-ru.mp3", en: "different", audioEn: "./assets/audio/08-neutral-adjectives/different.mp3" },
       { ru: "трудный", audioRu: "./assets/audio/08-neutral-adjectives/difficult-ru.mp3", en: "difficult", audioEn: "./assets/audio/08-neutral-adjectives/difficult.mp3" },
-      { ru: "легкий", audioRu: "./assets/audio/08-neutral-adjectives/easy-ru.mp3", en: "easy", audioEn: "./assets/08-neutral-adjectives/easy.mp3" },
+      { ru: "простой", audioRu: "./assets/audio/08-neutral-adjectives/easy-ru.mp3", en: "easy", audioEn: "./assets/audio/08-neutral-adjectives/easy.mp3" },
       { ru: "смущенный", audioRu: "./assets/audio/08-neutral-adjectives/embarrassed-ru.mp3", en: "embarrassed", audioEn: "./assets/audio/08-neutral-adjectives/embarrassed.mp3" },
-      { ru: "знаменитый", audioRu: "./assets/audio/08-neutral-adjectives/famous-ru.mp3", en: "famous", audioEn: "./assets/audio/08-neutral-adjectives/famous.mp3" },
+      { ru: "известный", audioRu: "./assets/audio/08-neutral-adjectives/famous-ru.mp3", en: "famous", audioEn: "./assets/audio/08-neutral-adjectives/famous.mp3" },
       { ru: "важный", audioRu: "./assets/audio/08-neutral-adjectives/important-ru.mp3", en: "important", audioEn: "./assets/audio/08-neutral-adjectives/important.mp3" }
     ]
   },
@@ -369,7 +369,7 @@ const levelsData = [
     words: [
       { ru: "невозможный", audioRu: "./assets/audio/08-neutral-adjectives/impossible-ru.mp3", en: "impossible", audioEn: "./assets/audio/08-neutral-adjectives/impossible.mp3" },
       { ru: "интересный", audioRu: "./assets/audio/08-neutral-adjectives/interesting-ru.mp3", en: "interesting", audioEn: "./assets/audio/08-neutral-adjectives/interesting.mp3" },
-      { ru: "настоящий", audioRu: "./assets/audio/08-neutral-adjectives/real-ru.mp3", en: "real", audioEn: "./assets/08-neutral-adjectives/real.mp3" },
+      { ru: "реальный", audioRu: "./assets/audio/08-neutral-adjectives/real-ru.mp3", en: "real", audioEn: "./assets/audio/08-neutral-adjectives/real.mp3" },
       { ru: "богатый", audioRu: "./assets/audio/08-neutral-adjectives/rich-ru.mp3", en: "rich", audioEn: "./assets/audio/08-neutral-adjectives/rich.mp3" },
       { ru: "новый", audioRu: "./assets/audio/08-neutral-adjectives/new-ru.mp3", en: "new", audioEn: "./assets/audio/08-neutral-adjectives/new.mp3" },
       { ru: "современный", audioRu: "./assets/audio/08-neutral-adjectives/modern-ru.mp3", en: "modern", audioEn: "./assets/audio/08-neutral-adjectives/modern.mp3" }
