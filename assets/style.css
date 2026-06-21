@@ -169,6 +169,12 @@ body {
 }
 
 /* button */
+.din{
+	margin: 3px;
+	width: 30px;
+	height: 30px;
+	border-radius: 50px;
+}
 button,
 .ico,
 .settings {
