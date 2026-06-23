@@ -22,6 +22,7 @@ class WordLearningGame {
 
     // Инициализация DOM‑элементов
     try {
+      this.voiceBtn = document.getElementById('din');
       this.yesBtn = document.getElementById('yes');
       this.noBtn = document.getElementById('no');
       this.engWordElement = document.getElementById('eng-word');
@@ -47,6 +48,11 @@ class WordLearningGame {
     this.maxErrors = 3;
     this.previousWord = null; // Добавляем свойство для хранения предыдущего слова
     this.isPlaying = true;
+
+    // Обработчик для кнопки повторного произношения
+    this.voiceBtn.addEventListener('click', () => {
+        this.repeatCurrentWord();
+    });
 
     // Массив путей к изображениям
         this.livesImages = [
@@ -75,7 +81,7 @@ class WordLearningGame {
         this.init(); // Инициализируем игру уже с настройками
         console.log('Настройки загружены');   
 
-   });
+      });
    
    // Инициализируем отображение счетчика
     this.updateWordCounter();
@@ -111,6 +117,32 @@ class WordLearningGame {
     this.updateWordCounter();
   }
 
+  repeatCurrentWord() {
+      // 1. Проверяем, есть ли текущее слово для воспроизведения
+      const currentWord = this.engWordElement.textContent.trim();
+      if (!currentWord) {
+          console.log('Нет текущего английского слова для воспроизведения');
+          return;
+      }
+
+      // 2. Ищем в levelData слово, соответствующее текущему тексту
+      const wordData = this.levelData.words.find(word => word.en === currentWord);
+
+      if (!wordData) {
+          console.warn(`Слово "${currentWord}" не найдено в levelData`);
+          return;
+      }
+
+      // 3. Проверяем доступность аудиофайла
+      if (!wordData.audioEn) {
+          console.warn(`Аудиофайл для слова "${currentWord}" не найден`);
+          return;
+      }
+
+      // 4. Воспроизводим аудио через существующий метод playAudio
+      this.playAudio(wordData.audioEn);
+      console.log(`Повторно воспроизводится: "${currentWord}"`);
+  }
   
   showCurrentWord() {
     if (this.currentWordIndex >= this.levelData.words.length) {
@@ -147,7 +179,10 @@ class WordLearningGame {
         this.engWordElement.textContent = randomWord.en;
         this.playAudio(randomWord.audioEn);
     }, 300);  // Задержка 1.5 секунды (можно настроить под свои нужды)
+    
   }
+
+  
 
   playAudio(audioPath) {
   // Создаем аудио-элемент
@@ -412,7 +447,6 @@ class WordLearningGame {
       }
       if (this.errors >= this.maxErrors) {
         this.playFunSound();
-        // this.endLevel(false);
         setTimeout(() => {        
         this.endLevel(false);
       }, 1200);
