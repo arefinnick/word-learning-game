@@ -374,6 +374,109 @@ const levelsData = [
       { ru: "новый", audioRu: "./assets/audio/08-neutral-adjectives/new-ru.mp3", en: "new", audioEn: "./assets/audio/08-neutral-adjectives/new.mp3" },
       { ru: "современный", audioRu: "./assets/audio/08-neutral-adjectives/modern-ru.mp3", en: "modern", audioEn: "./assets/audio/08-neutral-adjectives/modern.mp3" }
     ]
+  },
+  {
+    id: 31,
+    theme: "Работа1",
+    number: "7",
+    words: [
+      { ru: "бухгалтер", audioRu: "./assets/audio/09-job/accountant-ru.mp3", en: "accountant", audioEn: "./assets/audio/09-job/accountant.mp3" },
+      { ru: "актер", audioRu: "./assets/audio/09-job/actor-ru.mp3", en: "actor", audioEn: "./assets/audio/09-job/actor.mp3" },
+      { ru: "актриса", audioRu: "./assets/audio/09-job/actress-ru.mp3", en: "actress", audioEn: "./assets/audio/09-job/actress.mp3" },
+      { ru: "художник", audioRu: "./assets/audio/09-job/artist-ru.mp3", en: "artist", audioEn: "./assets/audio/09-job/artist.mp3" },
+      { ru: "босс", audioRu: "./assets/audio/09-job/boss-ru.mp3", en: "boss", audioEn: "./assets/audio/09-job/boss.mp3" },
+      { ru: "бизнесмен", audioRu: "./assets/audio/09-job/businessman-ru.mp3", en: "businessman", audioEn: "./assets/audio/09-job/businessman.mp3" },
+      { ru: "руководитель", audioRu: "./assets/audio/09-job/chief-ru.mp3", en: "chief", audioEn: "./assets/audio/09-job/chief.mp3" }
+    ]
+  },
+  {
+    id: 32,
+    theme: "Работа2",
+    number: "7",
+    words: [
+      { ru: "клиент", audioRu: "./assets/audio/09-job/client-ru.mp3", en: "client", audioEn: "./assets/audio/09-job/client.mp3" },
+      { ru: "коллега", audioRu: "./assets/audio/09-job/colleague-ru.mp3", en: "colleague", audioEn: "./assets/audio/09-job/colleague.mp3" },
+      { ru: "врач", audioRu: "./assets/audio/09-job/doctor-ru.mp3", en: "doctor", audioEn: "./assets/audio/09-job/doctor.mp3" },
+      { ru: "водитель", audioRu: "./assets/audio/09-job/driver-ru.mp3", en: "driver", audioEn: "./assets/audio/09-job/driver.mp3" },
+      { ru: "инженер", audioRu: "./assets/audio/09-job/engineer-ru.mp3", en: "engineer", audioEn: "./assets/audio/09-job/engineer.mp3" },
+      { ru: "стюардесса", audioRu: "./assets/audio/09-job/stewardess-ru.mp3", en: "stewardess", audioEn: "./assets/audio/09-job/stewardess.mp3" },
+      { ru: "бортпроводник", audioRu: "./assets/audio/09-job/flight-attendant-ru.mp3", en: "flight attendant", audioEn: "./assets/audio/09-job/flight-attendant.mp3" }
+    ]
+  },
+  {
+    id: 33,
+    theme: "Работа3",
+    number: "6",
+    words: [
+      { ru: "журналист", audioRu: "./assets/audio/09-job/journalist-ru.mp3", en: "journalist", audioEn: "./assets/audio/09-job/journalist.mp3" },
+      { ru: "юрист", audioRu: "./assets/audio/09-job/lawyer-ru.mp3", en: "lawyer", audioEn: "./assets/audio/09-job/lawyer.mp3" },
+      { ru: "спасатель", audioRu: "./assets/audio/09-job/lifeguard-ru.mp3", en: "lifeguard", audioEn: "./assets/audio/09-job/lifeguard.mp3" },
+      { ru: "механик", audioRu: "./assets/audio/09-job/mechanic-ru.mp3", en: "mechanic", audioEn: "./assets/audio/09-job/mechanic.mp3" },
+      { ru: "музыкант", audioRu: "./assets/audio/09-job/musician-ru.mp3", en: "musician", audioEn: "./assets/audio/09-job/musician.mp3" },
+      { ru: "няня", audioRu: "./assets/audio/09-job/nanny-ru.mp3", en: "nanny", audioEn: "./assets/audio/09-job/nanny.mp3" }
+    ]
+  },
+  {
+    id: 34,
+    theme: "Работа4",
+    number: "6",
+    words: [
+      { ru: "медсестра", audioRu: "./assets/audio/09-job/nurse-ru.mp3", en: "nurse", audioEn: "./assets/audio/09-job/nurse.mp3" },
+      { ru: "пилот", audioRu: "./assets/audio/09-job/pilot-ru.mp3", en: "pilot", audioEn: "./assets/audio/09-job/pilot.mp3" },
+      { ru: "сантехник", audioRu: "./assets/audio/09-job/plumber-ru.mp3", en: "plumber", audioEn: "./assets/audio/09-job/plumber.mp3" },
+      { ru: "полицейский", audioRu: "./assets/audio/09-job/policeman-ru.mp3", en: "policeman", audioEn: "./assets/audio/09-job/policeman.mp3" },
+      { ru: "школьник", audioRu: "./assets/audio/09-job/pupil-ru.mp3", en: "pupil", audioEn: "./assets/audio/09-job/pupil.mp3" },
+      { ru: "продавец", audioRu: "./assets/audio/09-job/shop-assistant-ru.mp3", en: "shop assistant", audioEn: "./assets/audio/09-job/shop-assistant.mp3" }
+    ]
+  },
+  {
+    id: 35,
+    theme: "Работа5",
+    number: "6",
+    words: [
+      { ru: "работа", audioRu: "./assets/audio/09-job/job-ru.mp3", en: "job", audioEn: "./assets/audio/09-job/job.mp3" },
+      { ru: "студент", audioRu: "./assets/audio/09-job/student-ru.mp3", en: "student", audioEn: "./assets/audio/09-job/student.mp3" },
+      { ru: "учитель", audioRu: "./assets/audio/09-job/teacher-ru.mp3", en: "teacher", audioEn: "./assets/audio/09-job/teacher.mp3" },
+      { ru: "официант", audioRu: "./assets/audio/09-job/waiter-ru.mp3", en: "waiter", audioEn: "./assets/audio/09-job/waiter.mp3" },
+      { ru: "официантка", audioRu: "./assets/audio/09-job/waitress-ru.mp3", en: "waitress", audioEn: "./assets/audio/09-job/waitress.mp3" },
+      { ru: "рабочий", audioRu: "./assets/audio/09-job/worker-ru.mp3", en: "worker", audioEn: "./assets/audio/09-job/worker.mp3" }
+    ]
+  },
+  {
+    id: 36,
+    theme: "Задачи1",
+    number: "5",
+    words: [
+      { ru: "сфера", audioRu: "./assets/audio/10-tasks/area-ru.mp3", en: "area", audioEn: "./assets/audio/10-tasks/area.mp3" },
+      { ru: "дело", audioRu: "./assets/audio/10-tasks/case-ru.mp3", en: "case", audioEn: "./assets/audio/10-tasks/case.mp3" },
+      { ru: "обстоятельство", audioRu: "./assets/audio/10-tasks/circumstance-ru.mp3", en: "circumstance", audioEn: "./assets/audio/10-tasks/circumstance.mp3" },
+      { ru: "решение", audioRu: "./assets/audio/10-tasks/decision-ru.mp3", en: "decision", audioEn: "./assets/audio/10-tasks/decision.mp3" },
+      { ru: "обязанность", audioRu: "./assets/audio/10-tasks/duty-ru.mp3", en: "duty", audioEn: "./assets/audio/10-tasks/duty.mp3" }
+    ]
+  },
+  {
+    id: 37,
+    theme: "Задачи2",
+    number: "5",
+    words: [
+      { ru: "цель", audioRu: "./assets/audio/10-tasks/goal-ru.mp3", en: "goal", audioEn: "./assets/audio/10-tasks/goal.mp3" },
+      { ru: "список", audioRu: "./assets/audio/10-tasks/list-ru.mp3", en: "list", audioEn: "./assets/audio/10-tasks/list.mp3" },
+      { ru: "перечислять", audioRu: "./assets/audio/10-tasks/to-list-ru.mp3", en: "to list", audioEn: "./assets/audio/10-tasks/tolist.mp3" },
+      { ru: "возможность", audioRu: "./assets/audio/10-tasks/opportunity-ru.mp3", en: "opportunity", audioEn: "./assets/audio/10-tasks/opportunity.mp3" },
+      { ru: "проблема", audioRu: "./assets/audio/10-tasks/problem-ru.mp3", en: "problem", audioEn: "./assets/audio/10-tasks/problem.mp3" }
+    ]
+  },
+  {
+    id: 38,
+    theme: "Задачи3",
+    number: "5",
+    words: [
+      { ru: "разрешение", audioRu: "./assets/audio/10-tasks/permit-ru.mp3", en: "permit", audioEn: "./assets/audio/10-tasks/permit.mp3" },
+      { ru: "причина", audioRu: "./assets/audio/10-tasks/reason-ru.mp3", en: "reason", audioEn: "./assets/audio/10-tasks/reason.mp3" },
+      { ru: "результат", audioRu: "./assets/audio/10-tasks/result-ru.mp3", en: "result", audioEn: "./assets/audio/10-tasks/result.mp3" },
+      { ru: "успех", audioRu: "./assets/audio/10-tasks/success-ru.mp3", en: "success", audioEn: "./assets/audio/10-tasks/success.mp3" },
+      { ru: "задача", audioRu: "./assets/audio/10-tasks/task-ru.mp3", en: "task", audioEn: "./assets/audio/10-tasks/task.mp3" }
+    ]
   }
   // ... остальные уровни
 ];
