@@ -447,7 +447,7 @@ const levelsData = [
     theme: "Задачи1",
     number: "5",
     words: [
-      { ru: "сфера", audioRu: "./assets/audio/10-tasks/area-ru.mp3", en: "area", audioEn: "./assets/audio/10-tasks/area.mp3" },
+      { ru: "область", audioRu: "./assets/audio/10-tasks/area-ru.mp3", en: "area", audioEn: "./assets/audio/10-tasks/area.mp3" },
       { ru: "дело", audioRu: "./assets/audio/10-tasks/case-ru.mp3", en: "case", audioEn: "./assets/audio/10-tasks/case.mp3" },
       { ru: "обстоятельство", audioRu: "./assets/audio/10-tasks/circumstance-ru.mp3", en: "circumstance", audioEn: "./assets/audio/10-tasks/circumstance.mp3" },
       { ru: "решение", audioRu: "./assets/audio/10-tasks/decision-ru.mp3", en: "decision", audioEn: "./assets/audio/10-tasks/decision.mp3" },
@@ -461,7 +461,7 @@ const levelsData = [
     words: [
       { ru: "цель", audioRu: "./assets/audio/10-tasks/goal-ru.mp3", en: "goal", audioEn: "./assets/audio/10-tasks/goal.mp3" },
       { ru: "список", audioRu: "./assets/audio/10-tasks/list-ru.mp3", en: "list", audioEn: "./assets/audio/10-tasks/list.mp3" },
-      { ru: "перечислять", audioRu: "./assets/audio/10-tasks/to-list-ru.mp3", en: "to list", audioEn: "./assets/audio/10-tasks/tolist.mp3" },
+      { ru: "перечислять", audioRu: "./assets/audio/10-tasks/to-list-ru.mp3", en: "to list", audioEn: "./assets/audio/10-tasks/to-list.mp3" },
       { ru: "возможность", audioRu: "./assets/audio/10-tasks/opportunity-ru.mp3", en: "opportunity", audioEn: "./assets/audio/10-tasks/opportunity.mp3" },
       { ru: "проблема", audioRu: "./assets/audio/10-tasks/problem-ru.mp3", en: "problem", audioEn: "./assets/audio/10-tasks/problem.mp3" }
     ]
@@ -476,6 +476,84 @@ const levelsData = [
       { ru: "результат", audioRu: "./assets/audio/10-tasks/result-ru.mp3", en: "result", audioEn: "./assets/audio/10-tasks/result.mp3" },
       { ru: "успех", audioRu: "./assets/audio/10-tasks/success-ru.mp3", en: "success", audioEn: "./assets/audio/10-tasks/success.mp3" },
       { ru: "задача", audioRu: "./assets/audio/10-tasks/task-ru.mp3", en: "task", audioEn: "./assets/audio/10-tasks/task.mp3" }
+    ]
+  },
+  {
+    id: 39,
+    theme: "Oдежда1",
+    number: "6",
+    words: [
+      { ru: "ремень", audioRu: "./assets/audio/11-clothes/belt-ru.mp3", en: "belt", audioEn: "./assets/audio/11-clothes/belt.mp3" },
+      { ru: "блузка", audioRu: "./assets/audio/11-clothes/blouse-ru.mp3", en: "blouse", audioEn: "./assets/audio/11-clothes/blouse.mp3" },
+      { ru: "ботинок", audioRu: "./assets/audio/11-clothes/boot-ru.mp3", en: "boot", audioEn: "./assets/audio/11-clothes/boot.mp3" },
+      { ru: "кепка", audioRu: "./assets/audio/11-clothes/cap-ru.mp3", en: "cap", audioEn: "./assets/audio/11-clothes/cap.mp3" },
+      { ru: "кардиган", audioRu: "./assets/audio/11-clothes/cardigan-ru.mp3", en: "cardigan", audioEn: "./assets/audio/11-clothes/cardigan.mp3" },
+      { ru: "пальто", audioRu: "./assets/audio/11-clothes/coat-ru.mp3", en: "coat", audioEn: "./assets/audio/11-clothes/coat.mp3" }
+    ]
+  },
+  {
+    id: 40,
+    theme: "Oдежда2",
+    number: "6",
+    words: [
+      { ru: "одежда", audioRu: "./assets/audio/11-clothes/clothes-ru.mp3", en: "сlothes", audioEn: "./assets/audio/11-clothes/clothes.mp3" },
+      { ru: "платье", audioRu: "./assets/audio/11-clothes/dress-ru.mp3", en: "dress", audioEn: "./assets/audio/11-clothes/dress.mp3" },
+      { ru: "одевать(ся)", audioRu: "./assets/audio/11-clothes/to-dress-ru.mp3", en: "to dress", audioEn: "./assets/audio/11-clothes/to-dress.mp3" },
+      { ru: "перчатка", audioRu: "./assets/audio/11-clothes/glove-ru.mp3", en: "glove", audioEn: "./assets/audio/11-clothes/glove.mp3" },
+      { ru: "шляпа", audioRu: "./assets/audio/11-clothes/hat-ru.mp3", en: "hat", audioEn: "./assets/audio/11-clothes/hat.mp3" },
+      { ru: "капюшон", audioRu: "./assets/audio/11-clothes/hood-ru.mp3", en: "hood", audioEn: "./assets/audio/11-clothes/hood.mp3" }
+    ]
+  },
+  {
+    id: 41,
+    theme: "Oдежда3",
+    number: "6",
+    words: [
+      { ru: "куртка", audioRu: "./assets/audio/11-clothes/jacket-ru.mp3", en: "jacket", audioEn: "./assets/audio/11-clothes/jacket.mp3" },
+      { ru: "джинсы", audioRu: "./assets/audio/11-clothes/jeans-ru.mp3", en: "jeans", audioEn: "./assets/audio/11-clothes/jeans.mp3" },
+      { ru: "пижама", audioRu: "./assets/audio/11-clothes/pyjamas-ru.mp3", en: "pyjamas", audioEn: "./assets/audio/11-clothes/pyjamas.mp3" },
+      { ru: "шарф", audioRu: "./assets/audio/11-clothes/scarf-ru.mp3", en: "scarf", audioEn: "./assets/audio/11-clothes/scarf.mp3" },
+      { ru: "рубашка", audioRu: "./assets/audio/11-clothes/shirt-ru.mp3", en: "shirt", audioEn: "./assets/audio/11-clothes/shirt.mp3" },
+      { ru: "туфли", audioRu: "./assets/audio/11-clothes/shoes-ru.mp3", en: "shoes", audioEn: "./assets/audio/11-clothes/shoes.mp3" }
+    ]
+  },
+  {
+    id: 42,
+    theme: "Oдежда4",
+    number: "6",
+    words: [
+      { ru: "шорты", audioRu: "./assets/audio/11-clothes/shorts-ru.mp3", en: "shorts", audioEn: "./assets/audio/11-clothes/shorts.mp3" },
+      { ru: "юбка", audioRu: "./assets/audio/11-clothes/skirt-ru.mp3", en: "skirt", audioEn: "./assets/audio/11-clothes/skirt.mp3" },
+      { ru: "носок", audioRu: "./assets/audio/11-clothes/sock-ru.mp3", en: "sock", audioEn: "./assets/audio/11-clothes/sock.mp3" },
+      { ru: "подходить", audioRu: "./assets/audio/11-clothes/suit-ru.mp3", en: "suit", audioEn: "./assets/audio/11-clothes/suit.mp3" },
+      { ru: "идти к лицу", audioRu: "./assets/audio/11-clothes/to-suit-ru.mp3", en: "to suit", audioEn: "./assets/audio/11-clothes/to-suit.mp3" },
+      { ru: "свитер", audioRu: "./assets/audio/11-clothes/sweater-ru.mp3", en: "sweater", audioEn: "./assets/audio/11-clothes/sweater.mp3" }
+    ]
+  },
+  {
+    id: 43,
+    theme: "Oдежда5",
+    number: "6",
+    words: [
+      { ru: "галстук", audioRu: "./assets/audio/11-clothes/tie-ru.mp3", en: "tie", audioEn: "./assets/audio/11-clothes/tie.mp3" },
+      { ru: "колготы", audioRu: "./assets/audio/11-clothes/tights-ru.mp3", en: "tights", audioEn: "./assets/audio/11-clothes/tights.mp3" },
+      { ru: "кроссовки", audioRu: "./assets/audio/11-clothes/trainers-sneakers-ru.mp3", en: "trainers,sneakers", audioEn: "./assets/audio/11-clothes/trainers-sneakers.mp3" },
+      { ru: "брюки", audioRu: "./assets/audio/11-clothes/trousers-ru.mp3", en: "trousers", audioEn: "./assets/audio/11-clothes/trousers.mp3" },
+      { ru: "футболка", audioRu: "./assets/audio/11-clothes/t-shirt-ru.mp3", en: "T-shirt", audioEn: "./assets/audio/11-clothes/t-shirt.mp3" },
+      { ru: "нижнее белье", audioRu: "./assets/audio/11-clothes/underwear-ru.mp3", en: "underwear", audioEn: "./assets/audio/11-clothes/underwear.mp3" }
+    ]
+  },
+  {
+    id: 44,
+    theme: "Oдежда6",
+    number: "6",
+    words: [
+      { ru: "браслет", audioRu: "./assets/audio/11-clothes/bracelet-ru.mp3", en: "bracelet", audioEn: "./assets/audio/11-clothes/bracelet.mp3" },
+      { ru: "сережка", audioRu: "./assets/audio/11-clothes/earring-ru.mp3", en: "earring", audioEn: "./assets/audio/11-clothes/earring.mp3" },
+      { ru: "очки", audioRu: "./assets/audio/11-clothes/glasses-ru.mp3", en: "glasses", audioEn: "./assets/audio/11-clothes/glasses.mp3" },
+      { ru: "ожерелье", audioRu: "./assets/audio/11-clothes/necklace-ru.mp3", en: "necklace", audioEn: "./assets/audio/11-clothes/necklace.mp3" },
+      { ru: "кошелек", audioRu: "./assets/audio/11-clothes/purse-ru.mp3", en: "purse", audioEn: "./assets/audio/11-clothes/purse.mp3" },
+      { ru: "бумажник", audioRu: "./assets/audio/11-clothes/wallet-ru.mp3", en: "wallet", audioEn: "./assets/audio/11-clothes/wallet.mp3" }
     ]
   }
   // ... остальные уровни
